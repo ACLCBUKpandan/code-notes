@@ -1,11 +1,12 @@
 #+RESULTS: output
 #+FILE: python.py
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 
 
 * Basics
 ** Output to Console
-#+begin_src python :results output
+#+begin_src python :results output :exports both
 print('Hello World')
 #+end_src
 
@@ -13,9 +14,9 @@ print('Hello World')
 : Hello World
 
 By default print function will output the next ~print~ function in the next line.
-#+begin_src python :results output :file python.py
-print('Hello')
-print(' World!')
+#+begin_src python :results output :exports both
+  print('Hello')
+  print(' World!')
 #+end_src
 
 #+RESULTS:
@@ -26,13 +27,12 @@ print(' World!')
 Adding ~end~ parameter changes the last character in the print function.
 The default ~end~ is ~\n~.
 #+begin_src python :results output :file python.py
-print('Hello', end='')
-print(' World!')
+  print('Hello', end='')
+  print(' World!')
 #+end_src
 
 #+RESULTS:
 : Hello World!
-
 
 ** Getting Input from Console
 #+begin_src python :results output
@@ -44,7 +44,6 @@ print(' World!')
 
 #+RESULTS:
 : Your name is James
-
 
 ** String Formatting
 String formatting is the process of infusing things in the string dynamically and presenting the string.
@@ -97,7 +96,6 @@ This new way of formatting lets you use embedded python expressions inside strin
 
 * Variables
 Variables are containers for storing data values.
-
 #+begin_src python :results output :file python.py
 foo = 'Lorem Ipsum' # string
 health = 200        # int
@@ -116,6 +114,11 @@ print(mana)
 print(lucky_numbers)
 #+end_src
 
+#+RESULTS:
+: Lorem Ipsum
+: 200
+: 10.2
+: [4, 13]
 ** Scope
 The location where we can find a variable and also access it if required.
 
@@ -252,3 +255,87 @@ In python we don't have a switch statement. Instead we can use the ~switch~ stat
 #+RESULTS:
 : OK
 : Invalid Status code
+
+
+* Loops
+** For Loops
+
+A for loop is used for iterating a sequence (list, tuple, dictionary, set, string)
+
+#+begin_src python :results output
+
+  fruits = ["apple", "banana", "cherry"]
+  for x in fruits:
+      print (x)
+      
+#+end_src
+
+A for loop with number of iteration.
+
+
+#+begin_src python :results output
+  fruits = ["apple", "banana", "cherry"]
+  for itr, x in enumerate(fruits):
+      print (itr, x)
+  
+#+end_src
+
+#+RESULTS:
+: 0 apple
+: 1 banana
+: 2 cherry
+
+A for loop with range.
+
+#+begin_src python :results output
+  for i in range(5):
+      print(i)
+#+end_src
+
+#+RESULTS:
+: 0
+: 1
+: 2
+: 3
+: 4
+** While Loop
+With the ~while~ loop we can execute a set of statements as long as a
+condition is true.
+#+begin_src python :results output
+  i = 1
+  while i < 6:
+      print(i)
+      i+=1
+#+end_src
+
+#+RESULTS:
+: 1
+
+: 2
+: 3
+: 4
+: 5
+
+While loop with else statement
+
+#+begin_src python :results output :exports both
+  i = 1
+  while i < 6:
+      print(i)
+      i+=1
+
+  else:
+      print('i is no longer less than 6')
+#+end_src
+
+#+RESULTS:
+: 1
+: 2
+: 3
+: 4
+: 5
+: i is no longer less than 6
+
+
+
+* Functions 
