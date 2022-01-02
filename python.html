@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-02 Sun 19:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="james" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2f6ebf6">1. Basics</a>
+<ul>
+<li><a href="#orgb907f2e">1.1. Output to Console</a></li>
+<li><a href="#orgddc0e1b">1.2. Getting Input from Console</a></li>
+<li><a href="#org4c3022f">1.3. String Formatting</a>
+<ul>
+<li><a href="#orgd8c5476">1.3.1. % Operator Formatting.</a></li>
+<li><a href="#org928f9ba">1.3.2. str.format()</a></li>
+<li><a href="#org71964aa">1.3.3. f-strings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga1bf109">2. Variables</a>
+<ul>
+<li><a href="#org9a78b85">2.1. Scope</a>
+<ul>
+<li><a href="#org913acbc">2.1.1. Global Scope</a></li>
+<li><a href="#orgadcd43c">2.1.2. Local Scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2b0b5b3">3. Conditionals</a>
+<ul>
+<li><a href="#orgbc829eb">3.1. Match Statements</a></li>
+</ul>
+</li>
+<li><a href="#orgf072289">4. Loops</a>
+<ul>
+<li><a href="#orgf6bbc7a">4.1. For Loops</a></li>
+<li><a href="#org13da1a8">4.2. While Loop</a></li>
+</ul>
+</li>
+<li><a href="#org9590ffa">5. Functions</a>
+<ul>
+<li><a href="#orgb639b9a">5.1. Calling a function</a></li>
+<li><a href="#org3964cf8">5.2. Arguments</a>
+<ul>
+<li><a href="#org57492f5">5.2.1. Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2f6ebf6" class="outline-2">
+<h2 id="org2f6ebf6"><span class="section-number-2">1.</span> Basics</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb907f2e" class="outline-3">
+<h3 id="orgb907f2e"><span class="section-number-3">1.1.</span> Output to Console</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-python">print('Hello World')
+</pre>
+</div>
+
+<pre class="example">
+Hello World
+</pre>
+
+
+<p>
+By default print function will output the next <code>print</code> function in the next line.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">print('Hello')
+print(' World!')
+</pre>
+</div>
+
+<pre class="example">
+Hello
+ World!
+</pre>
+
+
+
+<p>
+Adding <code>end</code> parameter changes the last character in the print function.
+The default <code>end</code> is <code>\n</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">print('Hello', end='')
+print(' World!')
+</pre>
+</div>
+
+<pre class="example">
+Hello World!
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgddc0e1b" class="outline-3">
+<h3 id="orgddc0e1b"><span class="section-number-3">1.2.</span> Getting Input from Console</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Getting input from the console and pass them to a variable
+</p>
+<div class="org-src-container">
+<pre class="src src-python">print('Give me your name')
+name = input()
+
+print ('Your name is ' + name )
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4c3022f" class="outline-3">
+<h3 id="org4c3022f"><span class="section-number-3">1.3.</span> String Formatting</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+String formatting is the process of infusing things in the string dynamically and presenting the string.
+</p>
+</div>
+<div id="outline-container-orgd8c5476" class="outline-4">
+<h4 id="orgd8c5476"><span class="section-number-4">1.3.1.</span> % Operator Formatting.</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Using the % format tells Python to substitute the value of name.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">name = 'Slim Shady'
+print ('My name is %s' % name)
+</pre>
+</div>
+
+<pre class="example">
+My name is Slim Shady
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org928f9ba" class="outline-4">
+<h4 id="org928f9ba"><span class="section-number-4">1.3.2.</span> str.format()</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+You can use <code>format()</code> to do simple positional formatting
+</p>
+<div class="org-src-container">
+<pre class="src src-python">name = 'Slim Shady'
+print ('My name is {}'.format(name))
+</pre>
+</div>
+
+<pre class="example">
+My name is Slim Shady
+</pre>
+
+
+<p>
+Or you can refer to your variable substitutions by name and use them in any order.
+</p>
+
+<p>
+You can use <code>format()</code> to do simple positional formatting
+</p>
+<div class="org-src-container">
+<pre class="src src-python">name = 'Yoshikage Kira'
+age  = 33
+print ('My name is {name}, I am {age} years old.'.format(age=age,name=name))
+</pre>
+</div>
+
+<pre class="example">
+My name is Yoshikage Kira, I am 33 years old.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org71964aa" class="outline-4">
+<h4 id="org71964aa"><span class="section-number-4">1.3.3.</span> f-strings</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+NOTE: This only works in Python version 3.6 or later.
+</p>
+
+<p>
+This new way of formatting lets you use embedded python expressions inside string constants.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">name = 'Yoshikage Kira'
+age  = 30
+print(f'My name is {name}. I am {30 + 3} years old')
+</pre>
+</div>
+
+<pre class="example">
+My name is Yoshikage Kira. I am 33 years old
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga1bf109" class="outline-2">
+<h2 id="orga1bf109"><span class="section-number-2">2.</span> Variables</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Variables are containers for storing data values.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">foo = 'Lorem Ipsum' # string
+health = 200        # int
+mana   = 10.20      # float
+lucky_numbers = [4, 13, ] # list | can be any data type | MUTABLE
+
+body_parts    = ('head',   # Tuples | can be any data type | IMMUTABLE
+                 'body',   # Immutable means that once created, it cannot
+                 'legs',)  # modified after.
+
+
+
+print(foo)
+print(health)
+print(mana)
+print(lucky_numbers)
+</pre>
+</div>
+
+<pre class="example">
+Lorem Ipsum
+200
+10.2
+[4, 13]
+</pre>
+</div>
+<div id="outline-container-org9a78b85" class="outline-3">
+<h3 id="org9a78b85"><span class="section-number-3">2.1.</span> Scope</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The location where we can find a variable and also access it if required.
+</p>
+</div>
+
+<div id="outline-container-org913acbc" class="outline-4">
+<h4 id="org913acbc"><span class="section-number-4">2.1.1.</span> Global Scope</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Global variables are the ones that are defined and declared outside any function. They can be used by any part of the program.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
+my_var = 12
+my_str = 'Hello World'
+
+def say_hello():
+   print (my_str) # my_str variable can be called here
+
+say_hello()
+</pre>
+</div>
+
+<pre class="example">
+Hello World
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgadcd43c" class="outline-4">
+<h4 id="orgadcd43c"><span class="section-number-4">2.1.2.</span> Local Scope</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Local scope variables are variables that lives only inside a block of code (e.g. function, conditionals, loops).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+def say_hello ():
+    my_str = 'Hello World'
+    print (my_str)
+
+say_hello()
+</pre>
+</div>
+
+<pre class="example">
+Hello World
+</pre>
+
+
+<p>
+Variables cannot go outside the block that belongs.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">def hello():
+    my_str = 'Hello World'
+    print(my_str)
+
+print(my_str)
+</pre>
+</div>
+
+<p>
+Think of the scope lifetime of a variable.
+Once a block of code is finished executing, the variable inside will be also removed from the memory. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+import random
+
+def say_hello ():
+    my_str = 12
+
+    while my_str &lt; 100:
+        random = random.randrange(1,6) # Generate random number between 1-5
+        my_str += random
+
+</pre>
+</div>
+
+<p>
+The <code>my_str</code> variable lives throughout the function. it can be accessed inside the loop. While the <code>random</code> variable cannot go outside the loop due to its scope.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org2b0b5b3" class="outline-2">
+<h2 id="org2b0b5b3"><span class="section-number-2">3.</span> Conditionals</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Python supports the usual logical conditions from mathematics
+</p>
+<ul class="org-ul">
+<li>a == b</li>
+<li>a != b</li>
+<li>a &lt; b</li>
+<li>a &gt; b</li>
+<li>a &lt;= b</li>
+<li>a &gt;= b</li>
+</ul>
+
+<p>
+These conditions can be used in several ways, most commonly in <code>if statements</code> and loops
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+a = 133
+b = 200
+
+if b &gt; a:
+    print("b is greater than a")
+
+else:
+    print("b is less than a")
+</pre>
+</div>
+
+<pre class="example">
+b is greater than a
+</pre>
+
+
+
+
+<div class="org-src-container">
+<pre class="src src-python">
+a = 133
+b = 200
+
+if b &gt; a:
+    print("b is greater than a")
+
+elif b &lt; a:
+    print("b is less than a")
+
+else:
+    print("They are equal")
+
+</pre>
+</div>
+
+<pre class="example">
+b is greater than a
+</pre>
+</div>
+
+<div id="outline-container-orgbc829eb" class="outline-3">
+<h3 id="orgbc829eb"><span class="section-number-3">3.1.</span> Match Statements</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+NOTE: This only works with Python <b>3.10</b> or newer.
+</p>
+
+<p>
+In python we don't have a switch statement. Instead we can use the <code>switch</code> statement.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">def print_status_code (code):
+    match code:
+        case "200":
+            print("OK")
+        case "404":
+            print("Not Found")
+        case "500":
+            print("Internal Server Error")
+        case _:
+            print("Invalid Status code")
+
+print_status_code('200')
+print_status_code('777')
+</pre>
+</div>
+
+<pre class="example">
+OK
+Invalid Status code
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf072289" class="outline-2">
+<h2 id="orgf072289"><span class="section-number-2">4.</span> Loops</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgf6bbc7a" class="outline-3">
+<h3 id="orgf6bbc7a"><span class="section-number-3">4.1.</span> For Loops</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+For loop is used in iterating o
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    print (x)
+
+</pre>
+</div>
+
+<pre class="example">
+apple
+banana
+cherry
+</pre>
+
+
+<p>
+Use <code>enumerate()</code> to get the number iteration. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">fruits = ["apple", "banana", "cherry"]
+for itr, x in enumerate(fruits):
+    print (itr, x)
+
+</pre>
+</div>
+
+<pre class="example">
+0 apple
+1 banana
+2 cherry
+</pre>
+
+
+<p>
+A for loop with range.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">for i in range(5):
+    print(i)
+</pre>
+</div>
+
+<pre class="example">
+0
+1
+2
+3
+4
+</pre>
+</div>
+</div>
+<div id="outline-container-org13da1a8" class="outline-3">
+<h3 id="org13da1a8"><span class="section-number-3">4.2.</span> While Loop</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+With the <code>while</code> loop we can execute a set of statements as long as a
+condition is true.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">i = 1
+while i &lt; 6:
+    print(i)
+    i+=1
+</pre>
+</div>
+
+<pre class="example">
+1
+2
+3
+4
+5
+</pre>
+
+
+<pre class="example">
+2
+3
+4
+5
+</pre>
+
+
+<p>
+While loop with else statement
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">i = 1
+while i &lt; 6:
+    print(i)
+    i+=1
+
+else:
+    print('i is no longer less than 6')
+</pre>
+</div>
+
+<pre class="example">
+1
+2
+3
+4
+5
+i is no longer less than 6
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9590ffa" class="outline-2">
+<h2 id="org9590ffa"><span class="section-number-2">5.</span> Functions</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+A function is a block of code which only runs when it is called.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">def my_function ():
+  print("Hello from a function")
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb639b9a" class="outline-3">
+<h3 id="orgb639b9a"><span class="section-number-3">5.1.</span> Calling a function</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Before a function runs, first it must be called.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">def my_function ():
+  print("Hello from a function")
+
+my_function()
+</pre>
+</div>
+
+<pre class="example">
+Hello from a function
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org3964cf8" class="outline-3">
+<h3 id="org3964cf8"><span class="section-number-3">5.2.</span> Arguments</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Data can be passed into functions as arguments.
+Arguments are specified after the function name, inside the parentheses.
+You can add as many arguments as you want, just separate them with a comma.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">def my_function (fname):
+  print (f'My name is {fname}')
+
+my_function('Slim shady')
+my_function('Yoshikage Kira')
+my_function('Giovanni Giorgio')
+my_function('Antonio Montaya')
+</pre>
+</div>
+
+<pre class="example">
+My name is Slim shady
+My name is Yoshikage Kira
+My name is Giovanni Giorgio
+My name is Antonio Montaya
+</pre>
+</div>
+
+<div id="outline-container-org57492f5" class="outline-4">
+<h4 id="org57492f5"><span class="section-number-4">5.2.1.</span> Parameters</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<p>
+Arguments are often shortened to 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: james</p>
+<p class="date">Created: 2022-01-02 Sun 19:46</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

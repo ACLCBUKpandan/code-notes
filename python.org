@@ -1,7 +1,7 @@
 #+RESULTS: output
 #+FILE: python.py
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-
+#+PROPERTY: header-args:python :exports both
 
 
 * Basics
@@ -26,7 +26,7 @@ By default print function will output the next ~print~ function in the next line
 
 Adding ~end~ parameter changes the last character in the print function.
 The default ~end~ is ~\n~.
-#+begin_src python :results output :file python.py
+#+begin_src python :results output :exports both
   print('Hello', end='')
   print(' World!')
 #+end_src
@@ -35,7 +35,8 @@ The default ~end~ is ~\n~.
 : Hello World!
 
 ** Getting Input from Console
-#+begin_src python :results output
+Getting input from the console and pass them to a variable
+#+begin_src python :results output :exports both
   print('Give me your name')
   name = input()
 
@@ -79,10 +80,10 @@ You can use ~format()~ to do simple positional formatting
 #+RESULTS:
 : My name is Yoshikage Kira, I am 33 years old.
 
-** f-strings
+*** f-strings
 NOTE: This only works in Python version 3.6 or later.
 
-This new way of formatting lets you use embedded python expressions inside string consntants.
+This new way of formatting lets you use embedded python expressions inside string constants.
 
 #+begin_src python :results output
   name = 'Yoshikage Kira'
@@ -96,7 +97,7 @@ This new way of formatting lets you use embedded python expressions inside strin
 
 * Variables
 Variables are containers for storing data values.
-#+begin_src python :results output :file python.py
+#+begin_src python :results output exports: both
 foo = 'Lorem Ipsum' # string
 health = 200        # int
 mana   = 10.20      # float
@@ -124,7 +125,7 @@ The location where we can find a variable and also access it if required.
 
 *** Global Scope
 Global variables are the ones that are defined and declared outside any function. They can be used by any part of the program.
-#+begin_src python :results output
+#+begin_src python :results output exports: both
 
   my_var = 12
   my_str = 'Hello World'
@@ -139,9 +140,9 @@ Global variables are the ones that are defined and declared outside any function
 : Hello World
 
 *** Local Scope
-Local scope variables are variables that lives only inside a block of code (eg. function, conditionals, loops).
+Local scope variables are variables that lives only inside a block of code (e.g. function, conditionals, loops).
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
 
   def say_hello ():
       my_str = 'Hello World'
@@ -149,9 +150,9 @@ Local scope variables are variables that lives only inside a block of code (eg. 
 
   say_hello()
   #+end_src
-Variables cannot go outside the block that  belongs.
+Variables cannot go outside the block that belongs.
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
   def hello():
       my_str = 'Hello World'
       print(my_str)
@@ -164,9 +165,10 @@ Variables cannot go outside the block that  belongs.
 :  File "<stdin>", line 5, in <module>
 : NameError: name 'my_str' is not defined
 
-Think of the scope lifetime of a variable. Once a block of code is finished executing, the variable inside will be also removed from the memory. 
+Think of the scope lifetime of a variable.
+Once a block of code is finished executing, the variable inside will be also removed from the memory. 
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
 
   import random
 
@@ -179,7 +181,7 @@ Think of the scope lifetime of a variable. Once a block of code is finished exec
           
 #+end_src
 
-The ~my_str~ variable lives through out the function, it can be accessed inside the loop. While the ~random~ variable cannot go outside the loop due to its scope.
+The ~my_str~ variable lives throughout the function. it can be accessed inside the loop. While the ~random~ variable cannot go outside the loop due to its scope.
 
 
 
@@ -194,7 +196,7 @@ Python supports the usual logical conditions from mathematics
 
 These conditions can be used in several ways, most commonly in ~if statements~ and loops
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
 
   a = 133
   b = 200
@@ -211,7 +213,7 @@ These conditions can be used in several ways, most commonly in ~if statements~ a
 
 
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
   
   a = 133
   b = 200
@@ -230,13 +232,12 @@ These conditions can be used in several ways, most commonly in ~if statements~ a
       #+RESULTS:
       : b is greater than a
 
-
 ** Match Statements
 NOTE: This only works with Python *3.10* or newer.
 
 In python we don't have a switch statement. Instead we can use the ~switch~ statement.
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
   def print_status_code (code):
       match code:
           case "200":
@@ -260,9 +261,8 @@ In python we don't have a switch statement. Instead we can use the ~switch~ stat
 * Loops
 ** For Loops
 
-A for loop is used for iterating a sequence (list, tuple, dictionary, set, string)
-
-#+begin_src python :results output
+For loop is used in iterating o
+#+begin_src python :results output :exports both
 
   fruits = ["apple", "banana", "cherry"]
   for x in fruits:
@@ -270,10 +270,9 @@ A for loop is used for iterating a sequence (list, tuple, dictionary, set, strin
       
 #+end_src
 
-A for loop with number of iteration.
+Use ~enumerate()~ to get the number iteration. 
 
-
-#+begin_src python :results output
+#+begin_src python :results output :exports both
   fruits = ["apple", "banana", "cherry"]
   for itr, x in enumerate(fruits):
       print (itr, x)
@@ -287,7 +286,7 @@ A for loop with number of iteration.
 
 A for loop with range.
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
   for i in range(5):
       print(i)
 #+end_src
@@ -301,7 +300,7 @@ A for loop with range.
 ** While Loop
 With the ~while~ loop we can execute a set of statements as long as a
 condition is true.
-#+begin_src python :results output
+#+begin_src python :results output :exports both
   i = 1
   while i < 6:
       print(i)
@@ -338,4 +337,49 @@ While loop with else statement
 
 
 
-* Functions 
+* Functions
+A function is a block of code which only runs when it is called.
+
+#+begin_src python :results output :exports both
+  def my_function ():
+    print("Hello from a function")
+#+end_src
+
+#+RESULTS:
+
+** Calling a function
+Before a function runs, first it must be called.
+
+#+begin_src python :results output :exports both
+  def my_function ():
+    print("Hello from a function")
+
+  my_function()
+#+end_src
+
+#+RESULTS:
+: Hello from a function
+
+
+** Arguments
+Data can be passed into functions as arguments.
+Arguments are specified after the function name, inside the parentheses.
+You can add as many arguments as you want, just separate them with a comma.
+#+begin_src python :results output :exports both
+  def my_function (fname):
+    print (f'My name is {fname}')
+
+  my_function('Slim shady')
+  my_function('Yoshikage Kira')
+  my_function('Giovanni Giorgio')
+  my_function('Antonio Montaya')
+#+end_src
+
+#+RESULTS:
+: My name is Slim shady
+: My name is Yoshikage Kira
+: My name is Giovanni Giorgio
+: My name is Antonio Montaya
+
+*** Parameters
+Arguments are often shortened to 
