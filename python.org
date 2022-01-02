@@ -776,7 +776,7 @@ Charlie
       if self.empty():
         print('The queue is empty')
         return
-      print(f'{self.collection[-1]} is popped')
+      print(f'{self.collection[0]} is popped')
       self.collection.pop(0)
 
 
