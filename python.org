@@ -45,6 +45,30 @@ Getting input from the console and pass them to a variable
 
 #+RESULTS:
 : Your name is James
+Get input wihtout a print statement
+
+#+begin_src python :results output :exports both
+  name = input('Give me your name: ')
+
+  print('Your name is ' + name)
+#+end_src
+
+#+RESULTS:
+: Your name is James
+
+
+
+Convert string to float or int
+
+#+begin_src python :results output :exports both
+
+   age = input('What is your age') # input() returns a string
+   age = int(age) # 'age' is now an integer
+   age = age + 5
+   print('Your age will be ' + age + ' in the next five years' )
+#+end_src
+#+RESULTS:
+: Your age will be 25 in the next five years.
 
 ** String Formatting
 String formatting is the process of infusing things in the string dynamically and presenting the string.
@@ -98,28 +122,47 @@ This new way of formatting lets you use embedded python expressions inside strin
 * Variables
 Variables are containers for storing data values.
 #+begin_src python :results output exports: both
-foo = 'Lorem Ipsum' # string
-health = 200        # int
-mana   = 10.20      # float
-lucky_numbers = [4, 13, ] # list | can be any data type | MUTABLE
 
-body_parts    = ('head',   # Tuples | can be any data type | IMMUTABLE
-                 'body',   # Immutable means that once created, it cannot
-                 'legs',)  # modified after.
+  from pprint import pprint # Import pprint library to make the out pretty.
 
+  foo = 'Lorem Ipsum' # string
+  health = 200        # int
+  mana   = 10.20      # float
+  lucky_numbers = [4, 13, ] # list | can be any data type | MUTABLE
 
+  body_parts    = ('head',   # Tuples | can be any data type | IMMUTABLE
+                   'body',   # Immutable means that once created, it cannot
+                   'legs',)  # modified after.
 
-print(foo)
-print(health)
-print(mana)
-print(lucky_numbers)
+  user = {                        # Dict | Dictionary
+      'name' : 'James',           # Dictionaries are used to store data values in key:value pairs
+      'username': 'jamesp101',     # Dictionary cannot have the same key.
+      'password': 'HelloWorld!',
+      'age': 12,                  # The value can be of any data type
+      'favcolors': ['red', 'blue'],
+      'lucky_number': lucky_numbers
+      }
+
+  print(foo)
+  print(health)
+  print(mana)
+  print(lucky_numbers)
+  pprint(user)                    # Prettify output 
 #+end_src
 
 #+RESULTS:
-: Lorem Ipsum
-: 200
-: 10.2
-: [4, 13]
+#+begin_example
+Lorem Ipsum
+200
+10.2
+[4, 13]
+{'age': 12,
+ 'favcolors': ['red', 'blue'],
+ 'lucky_number': [4, 13],
+ 'name': 'James',
+ 'password': 'HelloWorld!',
+ 'username': 'jamesp101'}
+#+end_example
 ** Scope
 The location where we can find a variable and also access it if required.
 

@@ -1,0 +1,6 @@
+* Introduction
+Some notes about programming.
+** Python
+- [[https://htmlpreview.github.io/?https://github.com/jamesp101/code-notes/blob/main/python.html][HTML-Version]]
+- [[./python.org][Org Version]]
+  
