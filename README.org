@@ -1,6 +1,6 @@
 * Introduction
 Some notes about programming.
 ** Python
-- [[https://htmlpreview.github.io/?https://github.com/jamesp101/code-notes/blob/main/python.html][HTML-Version]]
+- [[https://rawcdn.githack.com/ACLCBUKpandan/code-notes/06345c523259c12fb2570a794b15a447da858dc9/python.html][HTML-Version]]
 - [[./python.org][Org Version]]
   
