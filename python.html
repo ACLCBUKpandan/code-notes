@@ -3,196 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-03 Mon 01:33 -->
+<!-- 2023-03-15 Wed 16:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="author" content="james" />
+<meta name="author" content="James Paul M. Pandan" />
 <meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-</style>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -206,79 +22,82 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0767a40">1. Basics</a>
+<li><a href="#org9a80552">1. Basics</a>
 <ul>
-<li><a href="#orge638328">1.1. Output to Console</a></li>
-<li><a href="#orga3a6440">1.2. Getting Input from Console</a></li>
-<li><a href="#org5ae0e40">1.3. String Formatting</a>
+<li><a href="#orgc7e0931">1.1. Output to Console</a></li>
+<li><a href="#org4a94606">1.2. Getting Input from the Console</a></li>
+<li><a href="#org9594013">1.3. String Formatting</a>
 <ul>
-<li><a href="#org76ddb98">1.3.1. % Operator Formatting.</a></li>
-<li><a href="#org840eff6">1.3.2. str.format()</a></li>
-<li><a href="#orgb7f3bb4">1.3.3. f-strings</a></li>
+<li><a href="#orge8fa106">1.3.1. % Operator Formatting.</a></li>
+<li><a href="#org26c3bce">1.3.2. str.format()</a></li>
+<li><a href="#org04fb8f0">1.3.3. f-strings</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgfa76673">2. Variables</a>
+<li><a href="#org7ffe3bb">2. Variables</a>
 <ul>
-<li><a href="#org062ccc6">2.1. Scope</a>
+<li><a href="#orgd00754e">2.1. Scope</a>
 <ul>
-<li><a href="#org2e94248">2.1.1. Global Scope</a></li>
-<li><a href="#org7148b7a">2.1.2. Local Scope</a></li>
+<li><a href="#org64b5193">2.1.1. Global Scope</a></li>
+<li><a href="#org32ae82e">2.1.2. Local Scope</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org159f518">3. Conditionals</a>
+<li><a href="#org1791ac3">3. Data Types</a>
 <ul>
-<li><a href="#orga72a5eb">3.1. Match Statements</a></li>
+<li><a href="#orgdcabe45">3.1. Built-in Data Types</a></li>
 </ul>
 </li>
-<li><a href="#orga7e3395">4. Loops</a>
+<li><a href="#orgf28cff6">4. Conditionals</a>
 <ul>
-<li><a href="#org72a8eaa">4.1. For Loops</a></li>
-<li><a href="#orgf60ae30">4.2. While Loop</a></li>
+<li><a href="#org1dc1acc">4.1. Match Statements</a></li>
 </ul>
 </li>
-<li><a href="#org6ce1dc0">5. Functions</a>
+<li><a href="#org37bf6de">5. Loops</a>
 <ul>
-<li><a href="#org18d0df1">5.1. Calling a function</a></li>
-<li><a href="#org1bf75a1">5.2. Parameters and Arguments</a>
-<ul>
-<li><a href="#org1f3a429">5.2.1. Optional Parameters</a></li>
+<li><a href="#org86815d2">5.1. For Loops</a></li>
+<li><a href="#org1e8af09">5.2. While Loop</a></li>
 </ul>
 </li>
-<li><a href="#orgea3fb10">5.3. Return</a></li>
-</ul>
-</li>
-<li><a href="#org46bd9ce">6. Exception Handling</a></li>
-<li><a href="#org3261600">7. Class</a>
+<li><a href="#org8996c08">6. Functions</a>
 <ul>
-<li><a href="#org0b5ef81">7.1. _<sub>init</sub>_<sub>()</sub> function</a></li>
-<li><a href="#org07e2609">7.2. Object Methods</a></li>
-<li><a href="#org85030e4">7.3. Self Parameter</a></li>
-<li><a href="#org465f380">7.4. Pass Statement</a></li>
-</ul>
-</li>
-<li><a href="#org12fe4da">8. Data Structures</a>
+<li><a href="#org60df03f">6.1. Calling a function</a></li>
+<li><a href="#org8217fab">6.2. Return</a></li>
+<li><a href="#org949080a">6.3. Parameters and Arguments</a>
 <ul>
-<li><a href="#orgc813d4d">8.1. Stack</a></li>
-<li><a href="#org121b04b">8.2. Queue</a></li>
+<li><a href="#org91b0bc2">6.3.1. Parameters</a></li>
+<li><a href="#orgf3e776f">6.3.2. Arguments</a></li>
+<li><a href="#org7d225e5">6.3.3. Optional Parameters / Default Value Parameters</a></li>
 </ul>
 </li>
+<li><a href="#orgfe5cc24">6.4. Type Hints</a></li>
+</ul>
+</li>
+<li><a href="#orgcfab507">7. Exception Handling</a></li>
+<li><a href="#org1f0a554">8. Class</a>
+<ul>
+<li><a href="#org69f5926">8.1. _<sub>init</sub>_<sub>()</sub> function</a></li>
+<li><a href="#org063465c">8.2. Object Methods</a></li>
+<li><a href="#org7cebbd0">8.3. Self Parameter</a></li>
+<li><a href="#orge0814f5">8.4. Pass Statement</a></li>
+</ul>
+</li>
+<li><a href="#org5265921">9. Keywords</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0767a40" class="outline-2">
-<h2 id="org0767a40"><span class="section-number-2">1.</span> Basics</h2>
+<div id="outline-container-org9a80552" class="outline-2">
+<h2 id="org9a80552"><span class="section-number-2">1.</span> Basics</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orge638328" class="outline-3">
-<h3 id="orge638328"><span class="section-number-3">1.1.</span> Output to Console</h3>
+<div id="outline-container-orgc7e0931" class="outline-3">
+<h3 id="orgc7e0931"><span class="section-number-3">1.1.</span> Output to Console</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
-<pre class="src src-python">print('Hello World')
+<pre class="src src-python"><span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Hello World'</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -291,8 +110,8 @@ Hello World
 By default print function will output the next <code>print</code> function in the next line.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">print('Hello')
-print(' World!')
+<pre class="src src-python"><span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Hello'</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">' World!'</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -308,8 +127,8 @@ Adding <code>end</code> parameter changes the last character in the print functi
 The default <code>end</code> is <code>\n</code>.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">print('Hello', end='')
-print(' World!')
+<pre class="src src-python"><span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Hello'</span>, end=<span style="color: #3548cf;">''</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">' World!'</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -319,30 +138,41 @@ Hello World!
 </div>
 </div>
 
-<div id="outline-container-orga3a6440" class="outline-3">
-<h3 id="orga3a6440"><span class="section-number-3">1.2.</span> Getting Input from Console</h3>
+<div id="outline-container-org4a94606" class="outline-3">
+<h3 id="org4a94606"><span class="section-number-3">1.2.</span> Getting Input from the Console</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-Getting input from the console and pass them to a variable
+Getting input from the console and passing them to a variable
 </p>
 <div class="org-src-container">
-<pre class="src src-python">print('Give me your name')
-name = input()
+<pre class="src src-python"><span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Give me your name'</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">name</span> = <span style="color: #8f0075;">input</span><span style="color: #000000;">()</span>
 
-print ('Your name is ' + name )
+<span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span><span style="color: #3548cf;">'Your name is '</span> + name <span style="color: #000000;">)</span>
 </pre>
 </div>
+
+<pre class="example">
+Give me your name
+</pre>
 
 <p>
-Get input wihtout a print statement
+Get input without a print statement
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">name = input('Give me your name: ')
+<pre class="src src-python"><span style="color: #005e8b;">name</span> = <span style="color: #8f0075;">input</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Give me your name: '</span><span style="color: #000000;">)</span>
 
-print('Your name is ' + name)
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Your name is '</span> + name<span style="color: #000000;">)</span>
 </pre>
 </div>
+
+<pre class="example">
+Give me your name: 
+</pre>
+
+
+
 
 <p>
 Convert string to float or int
@@ -350,31 +180,34 @@ Convert string to float or int
 
 <div class="org-src-container">
 <pre class="src src-python">
-age = input('What is your age') # input() returns a string
-age = int(age) # 'age' is now an integer
-age = age + 5
-print('Your age will be ' + age + ' in the next five years' )
+<span style="color: #005e8b;">age</span> = <span style="color: #8f0075;">input</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'What is your age'</span><span style="color: #000000;">)</span> <span style="color: #595959;"># </span><span style="color: #595959;">input() returns a string</span>
+<span style="color: #005e8b;">age</span> = <span style="color: #8f0075;">int</span><span style="color: #000000;">(</span>age<span style="color: #000000;">)</span> <span style="color: #595959;"># </span><span style="color: #595959;">'age' is now an integer</span>
+<span style="color: #005e8b;">age</span> = age + 5
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Your age will be '</span> + age + <span style="color: #3548cf;">' in the next five years'</span> <span style="color: #000000;">)</span>
+</pre>
+</div>
+<pre class="example">
+What is your age
 </pre>
 </div>
 </div>
-</div>
 
-<div id="outline-container-org5ae0e40" class="outline-3">
-<h3 id="org5ae0e40"><span class="section-number-3">1.3.</span> String Formatting</h3>
+<div id="outline-container-org9594013" class="outline-3">
+<h3 id="org9594013"><span class="section-number-3">1.3.</span> String Formatting</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 String formatting is the process of infusing things in the string dynamically and presenting the string.
 </p>
 </div>
-<div id="outline-container-org76ddb98" class="outline-4">
-<h4 id="org76ddb98"><span class="section-number-4">1.3.1.</span> % Operator Formatting.</h4>
+<div id="outline-container-orge8fa106" class="outline-4">
+<h4 id="orge8fa106"><span class="section-number-4">1.3.1.</span> % Operator Formatting.</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
-Using the % format tells Python to substitute the value of name.
+Using the % format tells Python to substitute the value of the <code>name</code> variable.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">name = 'Slim Shady'
-print ('My name is %s' % name)
+<pre class="src src-python"><span style="color: #005e8b;">name</span> = <span style="color: #3548cf;">'Slim Shady'</span>
+<span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span><span style="color: #3548cf;">'My name is %s'</span> % name<span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -384,15 +217,15 @@ My name is Slim Shady
 </div>
 </div>
 
-<div id="outline-container-org840eff6" class="outline-4">
-<h4 id="org840eff6"><span class="section-number-4">1.3.2.</span> str.format()</h4>
+<div id="outline-container-org26c3bce" class="outline-4">
+<h4 id="org26c3bce"><span class="section-number-4">1.3.2.</span> str.format()</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 You can use <code>format()</code> to do simple positional formatting
 </p>
 <div class="org-src-container">
-<pre class="src src-python">name = 'Slim Shady'
-print ('My name is {}'.format(name))
+<pre class="src src-python"><span style="color: #005e8b;">name</span> = <span style="color: #3548cf;">'Slim Shady'</span>
+<span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span><span style="color: #3548cf;">'My name is {}'</span>.<span style="color: #8f0075;">format</span><span style="color: #dd22dd;">(</span>name<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -409,9 +242,9 @@ Or you can refer to your variable substitutions by name and use them in any orde
 You can use <code>format()</code> to do simple positional formatting
 </p>
 <div class="org-src-container">
-<pre class="src src-python">name = 'Yoshikage Kira'
-age  = 33
-print ('My name is {name}, I am {age} years old.'.format(age=age,name=name))
+<pre class="src src-python"><span style="color: #005e8b;">name</span> = <span style="color: #3548cf;">'Yoshikage Kira'</span>
+<span style="color: #005e8b;">age</span>  = 33
+<span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span><span style="color: #3548cf;">'My name is {name}, I am {age} years old.'</span>.<span style="color: #8f0075;">format</span><span style="color: #dd22dd;">(</span>age=age,name=name<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -421,11 +254,11 @@ My name is Yoshikage Kira, I am 33 years old.
 </div>
 </div>
 
-<div id="outline-container-orgb7f3bb4" class="outline-4">
-<h4 id="orgb7f3bb4"><span class="section-number-4">1.3.3.</span> f-strings</h4>
+<div id="outline-container-org04fb8f0" class="outline-4">
+<h4 id="org04fb8f0"><span class="section-number-4">1.3.3.</span> f-strings</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <p>
-NOTE: This only works in Python version 3.6 or later.
+NOTE: This only works in Python <b>version 3.6 or later.</b>
 </p>
 
 <p>
@@ -433,9 +266,9 @@ This new way of formatting lets you use embedded python expressions inside strin
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">name = 'Yoshikage Kira'
-age  = 30
-print(f'My name is {name}. I am {30 + 3} years old')
+<pre class="src src-python"><span style="color: #005e8b;">name</span> = <span style="color: #3548cf;">'Yoshikage Kira'</span>
+<span style="color: #005e8b;">age</span>  = 30
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">'My name is </span>{name}<span style="color: #3548cf;">. I am </span>{30 + 3}<span style="color: #3548cf;"> years old'</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -447,44 +280,43 @@ My name is Yoshikage Kira. I am 33 years old
 </div>
 </div>
 
-
-<div id="outline-container-orgfa76673" class="outline-2">
-<h2 id="orgfa76673"><span class="section-number-2">2.</span> Variables</h2>
+<div id="outline-container-org7ffe3bb" class="outline-2">
+<h2 id="org7ffe3bb"><span class="section-number-2">2.</span> Variables</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Variables are containers for storing data values.
 </p>
 <div class="org-src-container">
 <pre class="src src-python">
-from pprint import pprint # Import pprint library to make the out pretty.
+<span style="color: #531ab6;">from</span> pprint <span style="color: #531ab6;">import</span> pprint <span style="color: #595959;"># </span><span style="color: #595959;">Import pprint library to make the out pretty.</span>
 
-foo = 'Lorem Ipsum' # string
-health = 200        # int
-mana   = 10.20      # float
-lucky_numbers = [4, 13, ] # list | can be any data type | MUTABLE
+<span style="color: #005e8b;">foo</span> = <span style="color: #3548cf;">'Lorem Ipsum'</span> <span style="color: #595959;"># </span><span style="color: #595959;">string</span>
+<span style="color: #005e8b;">health</span> = 200        <span style="color: #595959;"># </span><span style="color: #595959;">int</span>
+<span style="color: #005e8b;">mana</span>   = 10.20      <span style="color: #595959;"># </span><span style="color: #595959;">float</span>
+<span style="color: #005e8b;">lucky_numbers</span> = <span style="color: #000000;">[</span>4, 13, <span style="color: #000000;">]</span> <span style="color: #595959;"># </span><span style="color: #595959;">list | can be any data type | MUTABLE</span>
 
-body_parts    = ('head',   # Tuples | can be any data type | IMMUTABLE
-                 'body',   # Immutable means that once created, it cannot
-                 'legs',)  # modified after.
+<span style="color: #005e8b;">body_parts</span>    = <span style="color: #000000;">(</span><span style="color: #3548cf;">'head'</span>,   <span style="color: #595959;"># </span><span style="color: #595959;">Tuples | can be any data type | IMMUTABLE</span>
+                 <span style="color: #3548cf;">'body'</span>,   <span style="color: #595959;"># </span><span style="color: #595959;">Immutable means that once created, it cannot</span>
+                 <span style="color: #3548cf;">'legs'</span>,<span style="color: #000000;">)</span>  <span style="color: #595959;"># </span><span style="color: #595959;">modified after.</span>
 
-user = {                        # Dict | Dictionary
-    'name' : 'James',           # Dictionaries are used to store data values in key:value pairs
-    'username': 'jamesp101',     # Dictionary cannot have the same key.
-    'password': 'HelloWorld!',
-    'age': 12,                  # The value can be of any data type
-    'favcolors': ['red', 'blue'],
-    'lucky_number': lucky_numbers
-    }
+<span style="color: #005e8b;">user</span> = <span style="color: #000000;">{</span>                        <span style="color: #595959;"># </span><span style="color: #595959;">Dict | Dictionary</span>
+    <span style="color: #3548cf;">'name'</span> : <span style="color: #3548cf;">'James'</span>,           <span style="color: #595959;"># </span><span style="color: #595959;">Dictionaries are used to store data values in key:value pairs</span>
+    <span style="color: #3548cf;">'username'</span>: <span style="color: #3548cf;">'jamesp101'</span>,     <span style="color: #595959;"># </span><span style="color: #595959;">Dictionary cannot have the same key.</span>
+    <span style="color: #3548cf;">'password'</span>: <span style="color: #3548cf;">'HelloWorld!'</span>,
+    <span style="color: #3548cf;">'age'</span>: 12,                  <span style="color: #595959;"># </span><span style="color: #595959;">The value can be of any data type</span>
+    <span style="color: #3548cf;">'favcolors'</span>: <span style="color: #dd22dd;">[</span><span style="color: #3548cf;">'red'</span>, <span style="color: #3548cf;">'blue'</span><span style="color: #dd22dd;">]</span>,
+    <span style="color: #3548cf;">'lucky_number'</span>: lucky_numbers
+<span style="color: #000000;">}</span>
 
-print(foo)
-print(health)
-print(mana)
-print(lucky_numbers)
-pprint(user)                    # Prettify output 
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>foo<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>health<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>mana<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>lucky_numbers<span style="color: #000000;">)</span>
+pprint<span style="color: #000000;">(</span>user<span style="color: #000000;">)</span>                    <span style="color: #595959;"># </span><span style="color: #595959;">Prettify output </span>
 </pre>
 </div>
 
-<pre class="example" id="orgbcc3825">
+<pre class="example" id="org684434c">
 Lorem Ipsum
 200
 10.2
@@ -497,29 +329,29 @@ Lorem Ipsum
  'username': 'jamesp101'}
 </pre>
 </div>
-<div id="outline-container-org062ccc6" class="outline-3">
-<h3 id="org062ccc6"><span class="section-number-3">2.1.</span> Scope</h3>
+<div id="outline-container-orgd00754e" class="outline-3">
+<h3 id="orgd00754e"><span class="section-number-3">2.1.</span> Scope</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The location where we can find a variable and also access it if required.
 </p>
 </div>
 
-<div id="outline-container-org2e94248" class="outline-4">
-<h4 id="org2e94248"><span class="section-number-4">2.1.1.</span> Global Scope</h4>
+<div id="outline-container-org64b5193" class="outline-4">
+<h4 id="org64b5193"><span class="section-number-4">2.1.1.</span> Global Scope</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 Global variables are the ones that are defined and declared outside any function. They can be used by any part of the program.
 </p>
 <div class="org-src-container">
 <pre class="src src-python">
-my_var = 12
-my_str = 'Hello World'
+<span style="color: #005e8b;">my_var</span> = 12
+<span style="color: #005e8b;">my_str</span> = <span style="color: #3548cf;">'Hello World'</span>
 
-def say_hello():
-   print (my_str) # my_str variable can be called here
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">say_hello</span><span style="color: #000000;">()</span>:
+   <span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span>my_str<span style="color: #000000;">)</span> <span style="color: #595959;"># </span><span style="color: #595959;">my_str variable can be called here</span>
 
-say_hello()
+say_hello<span style="color: #000000;">()</span>
 </pre>
 </div>
 
@@ -529,8 +361,8 @@ Hello World
 </div>
 </div>
 
-<div id="outline-container-org7148b7a" class="outline-4">
-<h4 id="org7148b7a"><span class="section-number-4">2.1.2.</span> Local Scope</h4>
+<div id="outline-container-org32ae82e" class="outline-4">
+<h4 id="org32ae82e"><span class="section-number-4">2.1.2.</span> Local Scope</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 Local scope variables are variables that lives only inside a block of code (e.g. function, conditionals, loops).
@@ -538,11 +370,11 @@ Local scope variables are variables that lives only inside a block of code (e.g.
 
 <div class="org-src-container">
 <pre class="src src-python">
-def say_hello ():
-    my_str = 'Hello World'
-    print (my_str)
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">say_hello</span> <span style="color: #000000;">()</span>:
+    <span style="color: #005e8b;">my_str</span> = <span style="color: #3548cf;">'Hello World'</span>
+    <span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span>my_str<span style="color: #000000;">)</span>
 
-say_hello()
+say_hello<span style="color: #000000;">()</span>
 </pre>
 </div>
 
@@ -556,11 +388,11 @@ Variables cannot go outside the block that belongs.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">def hello():
-    my_str = 'Hello World'
-    print(my_str)
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">hello</span><span style="color: #000000;">()</span>:
+    <span style="color: #005e8b;">my_str</span> = <span style="color: #3548cf;">'Hello World'</span>
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>my_str<span style="color: #000000;">)</span>
 
-print(my_str)
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>my_str<span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -571,14 +403,14 @@ Once a block of code is finished executing, the variable inside will be also rem
 
 <div class="org-src-container">
 <pre class="src src-python">
-import random
+<span style="color: #531ab6;">import</span> random
 
-def say_hello ():
-    my_str = 12
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">say_hello</span> <span style="color: #000000;">()</span>:
+    <span style="color: #005e8b;">my_str</span> = 12
 
-    while my_str &lt; 100:
-        random = random.randrange(1,6) # Generate random number between 1-5
-        my_str += random
+    <span style="color: #531ab6;">while</span> my_str &lt; 100:
+        <span style="color: #005e8b;">random</span> = random.randrange<span style="color: #000000;">(</span>1,6<span style="color: #000000;">)</span> <span style="color: #595959;"># </span><span style="color: #595959;">Generate random number between 1-5</span>
+        <span style="color: #005e8b;">my_str</span> += random
 
 </pre>
 </div>
@@ -591,11 +423,81 @@ The <code>my_str</code> variable lives throughout the function. it can be access
 </div>
 </div>
 
-
-
-<div id="outline-container-org159f518" class="outline-2">
-<h2 id="org159f518"><span class="section-number-2">3.</span> Conditionals</h2>
+<div id="outline-container-org1791ac3" class="outline-2">
+<h2 id="org1791ac3"><span class="section-number-2">3.</span> Data Types</h2>
 <div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgdcabe45" class="outline-3">
+<h3 id="orgdcabe45"><span class="section-number-3">3.1.</span> Built-in Data Types</h3>
+<div class="outline-text-3" id="text-3-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">Keyword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Text</td>
+<td class="org-left"><code>str</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Numbers</td>
+<td class="org-left"><code>int</code>, <code>float</code>, <code>complex</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Sequence</td>
+<td class="org-left"><code>list</code>, <code>tuple</code>, <code>range</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Maps</td>
+<td class="org-left"><code>dict</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Sets</td>
+<td class="org-left"><code>set</code>, <code>frozenset</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Boolean</td>
+<td class="org-left"><code>bool</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Binary</td>
+<td class="org-left"><code>bytes</code>, <code>bytearray</code>, <code>memoryview</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Null</td>
+<td class="org-left"><code>NoneType</code></td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf28cff6" class="outline-2">
+<h2 id="orgf28cff6"><span class="section-number-2">4.</span> Conditionals</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Python supports the usual logical conditions from mathematics
 </p>
@@ -614,14 +516,14 @@ These conditions can be used in several ways, most commonly in <code>if statemen
 
 <div class="org-src-container">
 <pre class="src src-python">
-a = 133
-b = 200
+<span style="color: #005e8b;">a</span> = 133
+<span style="color: #005e8b;">b</span> = 200
 
-if b &gt; a:
-    print("b is greater than a")
+<span style="color: #531ab6;">if</span> b &gt; a:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"b is greater than a"</span><span style="color: #000000;">)</span>
 
-else:
-    print("b is less than a")
+<span style="color: #531ab6;">else</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"b is less than a"</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -634,17 +536,17 @@ b is greater than a
 
 <div class="org-src-container">
 <pre class="src src-python">
-a = 133
-b = 200
+<span style="color: #005e8b;">a</span> = 133
+<span style="color: #005e8b;">b</span> = 200
 
-if b &gt; a:
-    print("b is greater than a")
+<span style="color: #531ab6;">if</span> b &gt; a:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"b is greater than a"</span><span style="color: #000000;">)</span>
 
-elif b &lt; a:
-    print("b is less than a")
+<span style="color: #531ab6;">elif</span> b &lt; a:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"b is less than a"</span><span style="color: #000000;">)</span>
 
-else:
-    print("They are equal")
+<span style="color: #531ab6;">else</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"They are equal"</span><span style="color: #000000;">)</span>
 
 </pre>
 </div>
@@ -654,9 +556,9 @@ b is greater than a
 </pre>
 </div>
 
-<div id="outline-container-orga72a5eb" class="outline-3">
-<h3 id="orga72a5eb"><span class="section-number-3">3.1.</span> Match Statements</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-org1dc1acc" class="outline-3">
+<h3 id="org1dc1acc"><span class="section-number-3">4.1.</span> Match Statements</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 NOTE: This only works with Python <b>3.10</b> or newer.
 </p>
@@ -666,19 +568,19 @@ In python we don't have a switch statement. Instead we can use the <code>switch<
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">def print_status_code (code):
-    match code:
-        case "200":
-            print("OK")
-        case "404":
-            print("Not Found")
-        case "500":
-            print("Internal Server Error")
-        case _:
-            print("Invalid Status code")
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">print_status_code</span> <span style="color: #000000;">(</span>code<span style="color: #000000;">)</span>:
+    <span style="color: #531ab6;">match</span> code:
+        <span style="color: #531ab6;">case</span> <span style="color: #3548cf;">"200"</span>:
+            <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"OK"</span><span style="color: #000000;">)</span>
+        <span style="color: #531ab6;">case</span> <span style="color: #3548cf;">"404"</span>:
+            <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"Not Found"</span><span style="color: #000000;">)</span>
+        <span style="color: #531ab6;">case</span> <span style="color: #3548cf;">"500"</span>:
+            <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"Internal Server Error"</span><span style="color: #000000;">)</span>
+        <span style="color: #531ab6;">case</span> _:
+            <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"Invalid Status code"</span><span style="color: #000000;">)</span>
 
-print_status_code('200')
-print_status_code('777')
+print_status_code<span style="color: #000000;">(</span><span style="color: #3548cf;">'200'</span><span style="color: #000000;">)</span>
+print_status_code<span style="color: #000000;">(</span><span style="color: #3548cf;">'777'</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -690,22 +592,21 @@ Invalid Status code
 </div>
 </div>
 
-
-<div id="outline-container-orga7e3395" class="outline-2">
-<h2 id="orga7e3395"><span class="section-number-2">4.</span> Loops</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org37bf6de" class="outline-2">
+<h2 id="org37bf6de"><span class="section-number-2">5.</span> Loops</h2>
+<div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org72a8eaa" class="outline-3">
-<h3 id="org72a8eaa"><span class="section-number-3">4.1.</span> For Loops</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-org86815d2" class="outline-3">
+<h3 id="org86815d2"><span class="section-number-3">5.1.</span> For Loops</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
-For loop is used in iterating o
+For loop is used in iterating a list or tuples
 </p>
 <div class="org-src-container">
 <pre class="src src-python">
-fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-    print (x)
+<span style="color: #005e8b;">fruits</span> = <span style="color: #000000;">[</span><span style="color: #3548cf;">"apple"</span>, <span style="color: #3548cf;">"banana"</span>, <span style="color: #3548cf;">"cherry"</span><span style="color: #000000;">]</span>
+<span style="color: #531ab6;">for</span> x <span style="color: #531ab6;">in</span> fruits:
+    <span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span>x<span style="color: #000000;">)</span>
 
 </pre>
 </div>
@@ -722,9 +623,9 @@ Use <code>enumerate()</code> to get the number iteration.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">fruits = ["apple", "banana", "cherry"]
-for itr, x in enumerate(fruits):
-    print (itr, x)
+<pre class="src src-python"><span style="color: #005e8b;">fruits</span> = <span style="color: #000000;">[</span><span style="color: #3548cf;">"apple"</span>, <span style="color: #3548cf;">"banana"</span>, <span style="color: #3548cf;">"cherry"</span><span style="color: #000000;">]</span>
+<span style="color: #531ab6;">for</span> itr, x <span style="color: #531ab6;">in</span> <span style="color: #8f0075;">enumerate</span><span style="color: #000000;">(</span>fruits<span style="color: #000000;">)</span>:
+    <span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span>itr, x<span style="color: #000000;">)</span>
 
 </pre>
 </div>
@@ -741,8 +642,8 @@ A for loop with range.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">for i in range(5):
-    print(i)
+<pre class="src src-python"><span style="color: #531ab6;">for</span> i <span style="color: #531ab6;">in</span> <span style="color: #8f0075;">range</span><span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>i<span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -755,18 +656,18 @@ A for loop with range.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgf60ae30" class="outline-3">
-<h3 id="orgf60ae30"><span class="section-number-3">4.2.</span> While Loop</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-org1e8af09" class="outline-3">
+<h3 id="org1e8af09"><span class="section-number-3">5.2.</span> While Loop</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
 With the <code>while</code> loop we can execute a set of statements as long as a
 condition is true.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">i = 1
-while i &lt; 6:
-    print(i)
-    i+=1
+<pre class="src src-python"><span style="color: #005e8b;">i</span> = 1
+<span style="color: #531ab6;">while</span> i &lt; 6:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>i<span style="color: #000000;">)</span>
+    <span style="color: #005e8b;">i</span>+=1
 </pre>
 </div>
 
@@ -779,26 +680,18 @@ while i &lt; 6:
 </pre>
 
 
-<pre class="example">
-2
-3
-4
-5
-</pre>
-
-
 <p>
 While loop with else statement
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">i = 1
-while i &lt; 6:
-    print(i)
-    i+=1
+<pre class="src src-python"><span style="color: #005e8b;">i</span> = 1
+<span style="color: #531ab6;">while</span> i &lt; 6:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>i<span style="color: #000000;">)</span>
+    <span style="color: #005e8b;">i</span>+=1
 
-else:
-    print('i is no longer less than 6')
+<span style="color: #531ab6;">else</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'i is no longer less than 6'</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -814,33 +707,31 @@ i is no longer less than 6
 </div>
 </div>
 
-
-
-<div id="outline-container-org6ce1dc0" class="outline-2">
-<h2 id="org6ce1dc0"><span class="section-number-2">5.</span> Functions</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org8996c08" class="outline-2">
+<h2 id="org8996c08"><span class="section-number-2">6.</span> Functions</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 A function is a block of code that runs when it is called.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">def my_function ():
-  print("Hello from a function")
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">my_function</span> <span style="color: #000000;">()</span>:
+  <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"Hello from a function"</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org18d0df1" class="outline-3">
-<h3 id="org18d0df1"><span class="section-number-3">5.1.</span> Calling a function</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-org60df03f" class="outline-3">
+<h3 id="org60df03f"><span class="section-number-3">6.1.</span> Calling a function</h3>
+<div class="outline-text-3" id="text-6-1">
 <p>
 Before a function runs, it must be called.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">def my_function ():
-  print("Hello from a function")
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">my_function</span> <span style="color: #000000;">()</span>:
+  <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"Hello from a function"</span><span style="color: #000000;">)</span>
 
-my_function()
+my_function<span style="color: #000000;">()</span>
 </pre>
 </div>
 
@@ -850,39 +741,107 @@ Hello from a function
 
 
 <p>
-Functions are usefull for programmers to divide their programs into separate modules.
+Functions are useful for programmers to divide their programs into separate modules.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-org1bf75a1" class="outline-3">
-<h3 id="org1bf75a1"><span class="section-number-3">5.2.</span> Parameters and Arguments</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-org8217fab" class="outline-3">
+<h3 id="org8217fab"><span class="section-number-3">6.2.</span> Return</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+A return statement is used to <b>end</b> the execution of the function call and return a value.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">my_func</span><span style="color: #000000;">()</span>:
+  <span style="color: #005e8b;">a</span> = 12
+  <span style="color: #005e8b;">b</span> = 3
+  <span style="color: #531ab6;">return</span>
+<span style="color: #005e8b;">a</span> = b * a                     <span style="color: #595959;"># </span><span style="color: #595959;">This code will not be executed.</span>
+
+</pre>
+</div>
+
+<p>
+Note: Return statement cannot be used outside the function.
+</p>
+
+
+
+<p>
+The value next to the return statement will be returned.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #531ab6;">import</span> random                   <span style="color: #595959;"># </span><span style="color: #595959;">Import random library</span>
+
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">roll_dice</span><span style="color: #000000;">()</span>:
+    <span style="color: #531ab6;">return</span> random.randrange<span style="color: #000000;">(</span>1,7<span style="color: #000000;">)</span>  <span style="color: #595959;"># </span><span style="color: #595959;">Generate a random number between 0-6 and returns it.</span>
+
+<span style="color: #005e8b;">dice_num</span> = roll_dice<span style="color: #000000;">()</span>         <span style="color: #595959;"># </span><span style="color: #595959;">The returned value will be passed to the 'dice_num'varaible</span>
+<span style="color: #595959;"># </span><span style="color: #595959;">print(roll_dice())           # We can also print directly the function.</span>
+
+<span style="color: #531ab6;">if</span> dice_num == 1:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'You won!'</span><span style="color: #000000;">)</span>
+<span style="color: #531ab6;">else</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'You lose!'</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+You lose!
+</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org949080a" class="outline-3">
+<h3 id="org949080a"><span class="section-number-3">6.3.</span> Parameters and Arguments</h3>
+<div class="outline-text-3" id="text-6-3">
+</div>
+<div id="outline-container-org91b0bc2" class="outline-4">
+<h4 id="org91b0bc2"><span class="section-number-4">6.3.1.</span> Parameters</h4>
+<div class="outline-text-4" id="text-6-3-1">
 <p>
 Data can be passed into functions as arguments.
 Arguments are specified after the function name, inside the parentheses.
 You can add as many arguments as you want, just separate them with a comma.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">def my_function (fname):        # Any data that will be passed will take the 'fname' variable
-  print (f'My name is {fname}') 
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">my_function</span> <span style="color: #000000;">(</span>fname<span style="color: #000000;">)</span>:        <span style="color: #595959;"># </span><span style="color: #595959;">Any data that will be passed will take the 'fname' variable</span>
+  <span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span>f<span style="color: #3548cf;">'My name is </span>{fname}<span style="color: #3548cf;">'</span><span style="color: #000000;">)</span> 
 
-my_function('Slim shady')       # The value of 'fname' variable is 'Slim Shady'
-my_function('Yoshikage Kira')
-my_function('Giovanni Giorgio')
-my_function('Antonio Montaya')
+my_function<span style="color: #000000;">(</span><span style="color: #3548cf;">'Slim shady'</span><span style="color: #000000;">)</span>       <span style="color: #595959;"># </span><span style="color: #595959;">The value of 'fname' variable is 'Slim Shady'</span>
+my_function<span style="color: #000000;">(</span><span style="color: #3548cf;">'Monad'</span><span style="color: #000000;">)</span>
+my_function<span style="color: #000000;">(</span><span style="color: #3548cf;">'Giovanni Giorgio'</span><span style="color: #000000;">)</span>
+my_function<span style="color: #000000;">(</span><span style="color: #3548cf;">'Antonio Montaya'</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
 <pre class="example">
 My name is Slim shady
-My name is Yoshikage Kira
+My name is Monad
 My name is Giovanni Giorgio
 My name is Antonio Montaya
 </pre>
+</div>
+</div>
 
 
+
+<div id="outline-container-orgf3e776f" class="outline-4">
+<h4 id="orgf3e776f"><span class="section-number-4">6.3.2.</span> Arguments</h4>
+<div class="outline-text-4" id="text-6-3-2">
 <p>
 The argument data will be the parameter variable.
 </p>
@@ -890,10 +849,10 @@ The argument data will be the parameter variable.
 
 
 <div class="org-src-container">
-<pre class="src src-python">def display_name (fname, lname, age,):
-    print (f'My name is {fname} {lname}. I am {age} years old.')
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">display_name</span> <span style="color: #000000;">(</span>fname, lname, age,<span style="color: #000000;">)</span>:
+    <span style="color: #8f0075;">print</span> <span style="color: #000000;">(</span>f<span style="color: #3548cf;">'My name is </span>{fname}<span style="color: #3548cf;"> </span>{lname}<span style="color: #3548cf;">. I am </span>{age}<span style="color: #3548cf;"> years old.'</span><span style="color: #000000;">)</span>
 
-display_name('Yoshikage', 'Kira', 33)
+display_name<span style="color: #000000;">(</span><span style="color: #3548cf;">'Yoshikage'</span>, <span style="color: #3548cf;">'Kira'</span>, 33<span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -908,12 +867,12 @@ Arguments are the data that goes to the function call.
 
 <div class="org-src-container">
 <pre class="src src-python">
-def square_nums (num):          # The 'num' is the parameter.
-    return num ** 2
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">square_nums</span> <span style="color: #000000;">(</span>num<span style="color: #000000;">)</span>:          <span style="color: #595959;"># </span><span style="color: #595959;">The 'num' is the parameter.</span>
+    <span style="color: #531ab6;">return</span> num ** 2
 
-my_num = 12
-result = square_nums(my_num)    # The 'my_num' is the argument.
-print(result)
+<span style="color: #005e8b;">my_num</span> = 12
+<span style="color: #005e8b;">result</span> = square_nums<span style="color: #000000;">(</span>my_num<span style="color: #000000;">)</span>    <span style="color: #595959;"># </span><span style="color: #595959;">The 'my_num' is the argument.</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>result<span style="color: #000000;">)</span>
 
 </pre>
 </div>
@@ -934,26 +893,27 @@ The parameters <b>must be filled</b> with data or variables, else it returns an 
 My name is Yoshikage Kira. I am 33 years old.
 </pre>
 </div>
-<div id="outline-container-org1f3a429" class="outline-4">
-<h4 id="org1f3a429"><span class="section-number-4">5.2.1.</span> Optional Parameters</h4>
-<div class="outline-text-4" id="text-5-2-1">
+</div>
+<div id="outline-container-org7d225e5" class="outline-4">
+<h4 id="org7d225e5"><span class="section-number-4">6.3.3.</span> Optional Parameters / Default Value Parameters</h4>
+<div class="outline-text-4" id="text-6-3-3">
 <p>
 Not all parameters are required. We can make some of the parameters <b>optional</b>.
 </p>
 
 <p>
 For example the <code>print()</code> function.
-<code>print()</code> function provides us multiple optional parameters. (see the docs <a href="https://docs.python.org/3/library/functions.html#print">here</a> ).
+<code>print()</code> function provides us with multiple optional parameters. (see the docs <a href="https://docs.python.org/3/library/functions.html#print">here</a> ).
 </p>
 
 <p>
 The ending character of each <code>print()</code> function is <code>\n</code>.
-We can change the value of it with an optional argument. 
+We can change its value of it with an optional argument. 
 </p>
 <div class="org-src-container">
-<pre class="src src-python">print('Hello World')    # No optional arguments
-print('Hello', end='') # With optional Arguments
-print(' World', end='!')# With optional Arguments
+<pre class="src src-python"><span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Hello World'</span><span style="color: #000000;">)</span>      <span style="color: #595959;"># </span><span style="color: #595959;">No optional arguments</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Hello'</span>, end=<span style="color: #3548cf;">''</span><span style="color: #000000;">)</span>    <span style="color: #595959;"># </span><span style="color: #595959;">With optional Arguments</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">' World'</span>, end=<span style="color: #3548cf;">'!'</span><span style="color: #000000;">)</span>  <span style="color: #595959;"># </span><span style="color: #595959;">With optional Arguments</span>
 </pre>
 </div>
 
@@ -969,11 +929,11 @@ In creating an optional parameter, it must have a default value if no arguments 
 
 <div class="org-src-container">
 <pre class="src src-python">
-def square_num(num=0):
-    return num ** 2
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">square_num</span><span style="color: #000000;">(</span>num=0<span style="color: #000000;">)</span>:
+    <span style="color: #531ab6;">return</span> num ** 2
 
-print(square_num(5))
-print(square_num())
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>square_num<span style="color: #dd22dd;">(</span>5<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>square_num<span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -986,61 +946,40 @@ print(square_num())
 </div>
 
 
-<div id="outline-container-orgea3fb10" class="outline-3">
-<h3 id="orgea3fb10"><span class="section-number-3">5.3.</span> Return</h3>
-<div class="outline-text-3" id="text-5-3">
+
+<div id="outline-container-orgfe5cc24" class="outline-3">
+<h3 id="orgfe5cc24"><span class="section-number-3">6.4.</span> Type Hints</h3>
+<div class="outline-text-3" id="text-6-4">
 <p>
-A return statement is used to <b>end</b> the execution of the function call and return a value.
+In creating a function, we can indicate the <b>expected</b> data types of arguments or return values.
+</p>
+
+<p>
+This can help to improve code readability, prevent errors, and make code easier to maintain
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">def my_func():
-  a = 12
-  b = 3
-  return
-  a = b * a                     # This code will not be executed.
+<pre class="src src-python"><span style="color: #531ab6;">def</span> <span style="color: #721045;">add_numbers</span><span style="color: #000000;">(</span>a: <span style="color: #8f0075;">int</span>, b: <span style="color: #8f0075;">float</span><span style="color: #000000;">)</span> -&gt; <span style="color: #8f0075;">float</span>:
 
-</pre>
-</div>
-
-<p>
-Note: Return statement cannot be used outside the function.
-</p>
+    <span style="color: #531ab6;">return</span> a + b
 
 
-
-<p>
-The value next to the return statement will be returned.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">
-import random                   # Import random library
-
-def roll_dice():
-    return random.randrange(1,7)  # Generate a random number between 0-6 and returns it.
-
-dice_num = roll_dice()         # The returned value will be passed to the 'dice_num'varaible
-# print(roll_dice())           # We can also print directly the function.
-
-if dice_num == 1:
-    print('You won!')
-else:
-    print('You lose!')
-</pre>
-</div>
-
-<pre class="example">
-You lose!
+add_numbers<span style="color: #000000;">(</span><span style="color: #3548cf;">"1"</span>, 2<span style="color: #000000;">)</span>  <span style="color: #595959;"># </span><span style="color: #595959;">We would get an error in the output</span>
 </pre>
 </div>
 </div>
 </div>
+</div>
 
 
-<div id="outline-container-org46bd9ce" class="outline-2">
-<h2 id="org46bd9ce"><span class="section-number-2">6.</span> Exception Handling</h2>
-<div class="outline-text-2" id="text-6">
+
+
+
+
+
+<div id="outline-container-orgcfab507" class="outline-2">
+<h2 id="orgcfab507"><span class="section-number-2">7.</span> Exception Handling</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 Adding extensive error handling is crucial when developing maintainable code.
 </p>
@@ -1050,36 +989,32 @@ If you have a block of code that might fail, you can
 manage any exceptions by placing an <code>try:</code> and <code>except:</code> block.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">import random                   # Import Random library
+<pre class="src src-python"><span style="color: #531ab6;">import</span> random                   <span style="color: #595959;"># </span><span style="color: #595959;">Import Random library</span>
 
-try:
-    num = random.randrange(0, 11)    # Generate random number between 0,10
-    result = 2 / num                 # If we get 0 in the 'num' variable, we wil get an error 
-except:
-    print('Cannot divide zero') # This will run if 'num' variable is zero.
+<span style="color: #531ab6;">try</span>:
+    <span style="color: #005e8b;">num</span> = random.randrange<span style="color: #000000;">(</span>0, 11<span style="color: #000000;">)</span>    <span style="color: #595959;"># </span><span style="color: #595959;">Generate random number between 0,10</span>
+    <span style="color: #005e8b;">result</span> = 2 / num                 <span style="color: #595959;"># </span><span style="color: #595959;">If we get 0 in the 'num' variable, we wil get an error </span>
+<span style="color: #531ab6;">except</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Cannot divide zero'</span><span style="color: #000000;">)</span> <span style="color: #595959;"># </span><span style="color: #595959;">This will run if 'num' variable is zero.</span>
 </pre>
 </div>
 
-<pre class="example">
-Cannot divide zero
-</pre>
-
-
 <p>
-We can specify what we error we can make an exception.
+We can specify what error we want to handle
 </p>
 
+
 <div class="org-src-container">
-<pre class="src src-python">try:
-    num = input('Give me num: ' )               
-    num = float (num)
-    result = 2 / num
-except ValueError:              # If we cannot convert our input, this will run.
-    print('Your input is wrong')
-except ZeroDivisionError:
-    print('Cannot divide zero') # If the input is zero
-except Exception:
-    print('An error occurred') # If there are other errors that occurs.
+<pre class="src src-python"><span style="color: #531ab6;">try</span>:
+    <span style="color: #005e8b;">num</span> = <span style="color: #8f0075;">input</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Give me num: '</span> <span style="color: #000000;">)</span>               
+    <span style="color: #005e8b;">num</span> = <span style="color: #8f0075;">float</span> <span style="color: #000000;">(</span>num<span style="color: #000000;">)</span>
+    <span style="color: #005e8b;">result</span> = 2 / num
+<span style="color: #531ab6;">except</span> <span style="color: #005f5f;">ValueError</span>:              <span style="color: #595959;"># </span><span style="color: #595959;">If we cannot convert our input, this will run.</span>
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Your input is wrong'</span><span style="color: #000000;">)</span>
+<span style="color: #531ab6;">except</span> <span style="color: #005f5f;">ZeroDivisionError</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'Cannot divide zero'</span><span style="color: #000000;">)</span> <span style="color: #595959;"># </span><span style="color: #595959;">If the input is zero</span>
+<span style="color: #531ab6;">except</span> <span style="color: #005f5f;">Exception</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'An error occurred'</span><span style="color: #000000;">)</span> <span style="color: #595959;"># </span><span style="color: #595959;">If there are other errors that occurs.</span>
 
 </pre>
 </div>
@@ -1099,11 +1034,9 @@ We can have many exceptions in our try-except statement (see the built-in except
 
 
 
-
-
-<div id="outline-container-org3261600" class="outline-2">
-<h2 id="org3261600"><span class="section-number-2">7.</span> Class</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org1f0a554" class="outline-2">
+<h2 id="org1f0a554"><span class="section-number-2">8.</span> Class</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 Python is an object-oriented programming language.
 Almost everything in python is an object, with its properties and methods.
@@ -1118,8 +1051,8 @@ A class is like an object constructor or a <span class="underline">blueprint</sp
 Create a class with a property named x.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">class MyClass:
-  x=5
+<pre class="src src-python"><span style="color: #531ab6;">class</span> <span style="color: #005f5f;">MyClass</span>:
+  <span style="color: #005e8b;">x</span>=5
 </pre>
 </div>
 
@@ -1127,11 +1060,11 @@ Create a class with a property named x.
 Create an object named p1, and print the value of x:
 </p>
 <div class="org-src-container">
-<pre class="src src-python">class MyClass:
-  x=5
+<pre class="src src-python"><span style="color: #531ab6;">class</span> <span style="color: #005f5f;">MyClass</span>:
+  <span style="color: #005e8b;">x</span>=5
 
-p1 = MyClass()
-print(p1.x)
+<span style="color: #005e8b;">p1</span> = MyClass<span style="color: #000000;">()</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>p1.x<span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -1140,26 +1073,25 @@ print(p1.x)
 </pre>
 </div>
 
-
-<div id="outline-container-org0b5ef81" class="outline-3">
-<h3 id="org0b5ef81"><span class="section-number-3">7.1.</span> _<sub>init</sub>_<sub>()</sub> function</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-org69f5926" class="outline-3">
+<h3 id="org69f5926"><span class="section-number-3">8.1.</span> _<sub>init</sub>_<sub>()</sub> function</h3>
+<div class="outline-text-3" id="text-8-1">
 <p>
 All classes have a function called <code>__init__()</code>, which is always executed when the class is being initiated.
-Use the <code>__init__()</code> function to assign values to object properties or other operations that are necessary too do when the object is being created.
+Use the <code>__init__()</code> function to assign values to object properties or other operations that are necessary to do when the object is being created.
 </p>
 
 
 <div class="org-src-container">
-<pre class="src src-python">class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+<pre class="src src-python"><span style="color: #531ab6;">class</span> <span style="color: #005f5f;">Person</span>:
+  <span style="color: #531ab6;">def</span> <span style="color: #721045;">__init__</span><span style="color: #000000;">(</span><span style="color: #531ab6;">self</span>, name, age<span style="color: #000000;">)</span>:
+    <span style="color: #531ab6;">self</span>.<span style="color: #005e8b;">name</span> = name
+    <span style="color: #531ab6;">self</span>.<span style="color: #005e8b;">age</span> = age
 
-p1 = Person('John', 37)
+<span style="color: #005e8b;">p1</span> = Person<span style="color: #000000;">(</span><span style="color: #3548cf;">'John'</span>, 37<span style="color: #000000;">)</span>
 
-print(p1.name)
-print(p1.age)
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>p1.name<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>p1.age<span style="color: #000000;">)</span>
 </pre>
 </div>
 
@@ -1171,31 +1103,30 @@ John
 
 
 <p>
-NOTE: The _<sub>init</sub>_<sub>()</sub> function is called automatically everytime the class is being used to create a new object.
+NOTE: The ~_<sub>init</sub>_<sub>()</sub> ~function is called automatically every time the class is being used to create a new object.
 </p>
 </div>
 </div>
 
-
-<div id="outline-container-org07e2609" class="outline-3">
-<h3 id="org07e2609"><span class="section-number-3">7.2.</span> Object Methods</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-org063465c" class="outline-3">
+<h3 id="org063465c"><span class="section-number-3">8.2.</span> Object Methods</h3>
+<div class="outline-text-3" id="text-8-2">
 <p>
 Objects can also contain methods. Methods in objects are functions that belong to the object.
 </p>
 
 
 <div class="org-src-container">
-<pre class="src src-python">class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+<pre class="src src-python"><span style="color: #531ab6;">class</span> <span style="color: #005f5f;">Person</span>:
+  <span style="color: #531ab6;">def</span> <span style="color: #721045;">__init__</span><span style="color: #000000;">(</span><span style="color: #531ab6;">self</span>, name, age<span style="color: #000000;">)</span>:
+    <span style="color: #531ab6;">self</span>.<span style="color: #005e8b;">name</span> = name
+    <span style="color: #531ab6;">self</span>.<span style="color: #005e8b;">age</span> = age
 
-  def myfunc(self):
-    print("Hello my name is " + self.name)
+  <span style="color: #531ab6;">def</span> <span style="color: #721045;">myfunc</span><span style="color: #000000;">(</span><span style="color: #531ab6;">self</span><span style="color: #000000;">)</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"Hello my name is "</span> + <span style="color: #531ab6;">self</span>.name<span style="color: #000000;">)</span>
 
-p1 = Person("John", 36)
-p1.myfunc() 
+<span style="color: #005e8b;">p1</span> = Person<span style="color: #000000;">(</span><span style="color: #3548cf;">"John"</span>, 36<span style="color: #000000;">)</span>
+p1.myfunc<span style="color: #000000;">()</span> 
 </pre>
 </div>
 
@@ -1205,25 +1136,25 @@ Hello my name is John
 </div>
 </div>
 
-<div id="outline-container-org85030e4" class="outline-3">
-<h3 id="org85030e4"><span class="section-number-3">7.3.</span> Self Parameter</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-org7cebbd0" class="outline-3">
+<h3 id="org7cebbd0"><span class="section-number-3">8.3.</span> Self Parameter</h3>
+<div class="outline-text-3" id="text-8-3">
 <p>
-The <code>self</code> parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.
-It does not have to be named self , you can call it whatever you like, but it has to be the first parameter of any function in the class
+The <code>self</code> parameter is a reference to the current instance of the class and is used to access variables that belong to the class.
+It does not have to be named self, you can call it whatever you like, but it has to be the first parameter of any function in the class
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">class Person:
-  def __init__(mysillyobject, name, age):
-    mysillyobject.name = name
-    mysillyobject.age = age
+<pre class="src src-python"><span style="color: #531ab6;">class</span> <span style="color: #005f5f;">Person</span>:
+  <span style="color: #531ab6;">def</span> <span style="color: #721045;">__init__</span><span style="color: #000000;">(</span>mysillyobject, name, age<span style="color: #000000;">)</span>:
+    mysillyobject.<span style="color: #005e8b;">name</span> = name
+    mysillyobject.<span style="color: #005e8b;">age</span> = age
 
-  def myfunc(abc):
-    print("Hello my name is " + abc.name)
+  <span style="color: #531ab6;">def</span> <span style="color: #721045;">myfunc</span><span style="color: #000000;">(</span>abc<span style="color: #000000;">)</span>:
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"Hello my name is "</span> + abc.name<span style="color: #000000;">)</span>
 
-p1 = Person("John", 36)
-p1.myfunc() 
+<span style="color: #005e8b;">p1</span> = Person<span style="color: #000000;">(</span><span style="color: #3548cf;">"John"</span>, 36<span style="color: #000000;">)</span>
+p1.myfunc<span style="color: #000000;">()</span> 
 </pre>
 </div>
 
@@ -1232,16 +1163,19 @@ Hello my name is John
 </pre>
 </div>
 </div>
-<div id="outline-container-org465f380" class="outline-3">
-<h3 id="org465f380"><span class="section-number-3">7.4.</span> Pass Statement</h3>
-<div class="outline-text-3" id="text-7-4">
+
+
+
+<div id="outline-container-orge0814f5" class="outline-3">
+<h3 id="orge0814f5"><span class="section-number-3">8.4.</span> Pass Statement</h3>
+<div class="outline-text-3" id="text-8-4">
 <p>
 <code>class</code> definitions cannot be empty, but if you for some reason have a <code>class</code> definition with no content, put in the <code>pass</code> statement to avoid getting an error.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">class Person:
-  pass
+<pre class="src src-python"><span style="color: #531ab6;">class</span> <span style="color: #005f5f;">Person</span>:
+  <span style="color: #531ab6;">pass</span>
 </pre>
 </div>
 </div>
@@ -1249,176 +1183,42 @@ Hello my name is John
 </div>
 
 
-<div id="outline-container-org12fe4da" class="outline-2">
-<h2 id="org12fe4da"><span class="section-number-2">8.</span> Data Structures</h2>
-<div class="outline-text-2" id="text-8">
-</div>
-<div id="outline-container-orgc813d4d" class="outline-3">
-<h3 id="orgc813d4d"><span class="section-number-3">8.1.</span> Stack</h3>
-<div class="outline-text-3" id="text-8-1">
+
+
+
+
+
+
+<div id="outline-container-org5265921" class="outline-2">
+<h2 id="org5265921"><span class="section-number-2">9.</span> Keywords</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Keywords a reserved words in python.
+</p>
+
+<p>
+We cannot use a keyword as a name for a variable, function or any other identifier
+</p>
+
+
+<p>
+We can show the reserved keywords in python by:
+</p>
 <div class="org-src-container">
-<pre class="src src-python">class Stack:
-  def __init__(self, maxsize=0):
-    self.collection = list()
-
-    if maxsize &lt; 0:             # If maxsize is negative value
-      raise Exception('Cannot be negative.')
-
-    self.maxsize = maxsize
-
-  def size(self):
-    return len(self.collection)
-
-  def push(self, value):
-
-    if self.size() &lt; self.maxsize or self.maxsize == 0:
-      self.collection.append(value)
-    else:
-      print('The stack is full')
-
-
-  def pop(self,):
-    if self.empty():
-      print('The stack is empty')
-      return
-    print(f'{self.collection[-1]} is popped')
-    self.collection.pop()
-
-
-  def top(self):
-    if self.empty():
-      print('The stack is empty')
-
-    print(self.collection[-1])
-
-  def empty(self,):
-    return self.size() &lt;= 0
-
-  def __str__(self):    # If we print the object, it will print the collection list
-    return str(self.collection)
-
-
-students = Stack(maxsize=5) # if no arguments then the stack is infinite
-students.push('James')
-students.push('Paul')
-students.push('Pablo')
-students.push('Jamie')
-students.push('Jonathan')
-students.push('Charlie')
-print(students)
-
-for _ in range(7): # Pop 7 times
-  students.pop()
-
-students.push('Charlie')
-students.top()
-students.push('Pablo')
-print(students.size())
+<pre class="src src-python"><span style="color: #531ab6;">import</span> keyword
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>keyword.kwlist<span style="color: #000000;">)</span>
 </pre>
 </div>
 
-<pre class="example" id="orgfbe48f0">
-The stack is full
-['James', 'Paul', 'Pablo', 'Jamie', 'Jonathan']
-Jonathan is popped
-Jamie is popped
-Pablo is popped
-Paul is popped
-James is popped
-The stack is empty
-The stack is empty
-Charlie
-2
+<pre class="example">
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 </pre>
-</div>
-</div>
-
-
-
-<div id="outline-container-org121b04b" class="outline-3">
-<h3 id="org121b04b"><span class="section-number-3">8.2.</span> Queue</h3>
-<div class="outline-text-3" id="text-8-2">
-<div class="org-src-container">
-<pre class="src src-python">class Queue:
-  def __init__(self, maxsize=0):
-    self.collection = list()
-
-    if maxsize &lt; 0:             # If maxsize is negative value
-      raise Exception('Cannot be negative.')
-
-    self.maxsize = maxsize
-
-  def size(self):
-    return len(self.collection)
-
-  def push(self, value):
-
-    if self.size() &lt; self.maxsize or self.maxsize == 0:
-      self.collection.append(value)
-    else:
-      print('The queue is full')
-
-
-  def pop(self,):
-    if self.empty():
-      print('The queue is empty')
-      return
-    print(f'{self.collection[0]} is popped')
-    self.collection.pop(0)
-
-
-  def top(self):
-    if self.empty():
-      print('The stack is empty')
-
-    print(self.collection[-1])
-
-  def empty(self,):
-    return self.size() &lt;= 0
-
-  def __str__(self):    # If we print the object, it will print the collection list
-    return str(self.collection)
-
-students = Queue(maxsize=5) # if no arguments then the Queue is infinite
-students.push('James')
-students.push('Paul')
-students.push('Pablo')
-students.push('Jamie')
-students.push('Jonathan')
-students.push('Charlie')
-print(students)
-
-for _ in range(7): # Pop 7 times
-  students.pop()
-
-students.push('Charlie')
-students.top()
-students.push('Pablo')
-print(students.size())
-
-</pre>
-</div>
-
-<pre class="example" id="orgaff5abd">
-The queue is full
-['James', 'Paul', 'Pablo', 'Jamie', 'Jonathan']
-James is popped
-Paul is popped
-Pablo is popped
-Jamie is popped
-Jonathan is popped
-The queue is empty
-The queue is empty
-Charlie
-2
-</pre>
-</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: james</p>
-<p class="date">Created: 2022-01-03 Mon 01:33</p>
+<p class="author">Author: James Paul M. Pandan</p>
+<p class="date">Created: 2023-03-15 Wed 16:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

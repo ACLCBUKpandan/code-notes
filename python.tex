@@ -1,0 +1,853 @@
+% Created 2023-03-15 Wed 16:07
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{James Paul M. Pandan}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={James Paul M. Pandan},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.0.50 (Org mode 9.6.1)}, 
+ pdflang={English}}
+\begin{document}
+
+\setcounter{tocdepth}{4}
+\tableofcontents
+
+
+\section{Basics}
+\label{sec:orgc64f03b}
+\subsection{Output to Console}
+\label{sec:org6a96085}
+\begin{verbatim}
+print('Hello World')
+\end{verbatim}
+
+\begin{verbatim}
+Hello World
+\end{verbatim}
+
+
+By default print function will output the next \texttt{print} function in the next line.
+\begin{verbatim}
+print('Hello')
+print(' World!')
+\end{verbatim}
+
+\begin{verbatim}
+Hello
+ World!
+\end{verbatim}
+
+
+
+Adding \texttt{end} parameter changes the last character in the print function.
+The default \texttt{end} is \texttt{\textbackslash{}n}.
+\begin{verbatim}
+print('Hello', end='')
+print(' World!')
+\end{verbatim}
+
+\begin{verbatim}
+Hello World!
+\end{verbatim}
+
+\subsection{Getting Input from the Console}
+\label{sec:orgd521cae}
+Getting input from the console and passing them to a variable
+\begin{verbatim}
+print('Give me your name')
+name = input()
+
+print ('Your name is ' + name )
+\end{verbatim}
+
+\begin{verbatim}
+Give me your name
+\end{verbatim}
+
+Get input without a print statement
+
+\begin{verbatim}
+name = input('Give me your name: ')
+
+print('Your name is ' + name)
+\end{verbatim}
+
+\begin{verbatim}
+Give me your name: 
+\end{verbatim}
+
+
+
+
+Convert string to float or int
+
+\begin{verbatim}
+
+age = input('What is your age') # input() returns a string
+age = int(age) # 'age' is now an integer
+age = age + 5
+print('Your age will be ' + age + ' in the next five years' )
+\end{verbatim}
+\begin{verbatim}
+What is your age
+\end{verbatim}
+
+\subsection{String Formatting}
+\label{sec:org3e4a4c8}
+String formatting is the process of infusing things in the string dynamically and presenting the string.
+\subsubsection{\% Operator Formatting.}
+\label{sec:orgb615f5b}
+Using the \% format tells Python to substitute the value of the \texttt{name} variable.
+\begin{verbatim}
+name = 'Slim Shady'
+print ('My name is %s' % name)
+\end{verbatim}
+
+\begin{verbatim}
+My name is Slim Shady
+\end{verbatim}
+
+\subsubsection{str.format()}
+\label{sec:orgef2dae7}
+You can use \texttt{format()} to do simple positional formatting
+\begin{verbatim}
+name = 'Slim Shady'
+print ('My name is {}'.format(name))
+\end{verbatim}
+
+\begin{verbatim}
+My name is Slim Shady
+\end{verbatim}
+
+
+Or you can refer to your variable substitutions by name and use them in any order.
+
+You can use \texttt{format()} to do simple positional formatting
+\begin{verbatim}
+name = 'Yoshikage Kira'
+age  = 33
+print ('My name is {name}, I am {age} years old.'.format(age=age,name=name))
+\end{verbatim}
+
+\begin{verbatim}
+My name is Yoshikage Kira, I am 33 years old.
+\end{verbatim}
+
+\subsubsection{f-strings}
+\label{sec:orgf7457e7}
+NOTE: This only works in Python \textbf{version 3.6 or later.}
+
+This new way of formatting lets you use embedded python expressions inside string constants.
+
+\begin{verbatim}
+name = 'Yoshikage Kira'
+age  = 30
+print(f'My name is {name}. I am {30 + 3} years old')
+\end{verbatim}
+
+\begin{verbatim}
+My name is Yoshikage Kira. I am 33 years old
+\end{verbatim}
+
+\section{Variables}
+\label{sec:org2fb2131}
+Variables are containers for storing data values.
+\begin{verbatim}
+
+from pprint import pprint # Import pprint library to make the out pretty.
+
+foo = 'Lorem Ipsum' # string
+health = 200        # int
+mana   = 10.20      # float
+lucky_numbers = [4, 13, ] # list | can be any data type | MUTABLE
+
+body_parts    = ('head',   # Tuples | can be any data type | IMMUTABLE
+                 'body',   # Immutable means that once created, it cannot
+                 'legs',)  # modified after.
+
+user = {                        # Dict | Dictionary
+    'name' : 'James',           # Dictionaries are used to store data values in key:value pairs
+    'username': 'jamesp101',     # Dictionary cannot have the same key.
+    'password': 'HelloWorld!',
+    'age': 12,                  # The value can be of any data type
+    'favcolors': ['red', 'blue'],
+    'lucky_number': lucky_numbers
+}
+
+print(foo)
+print(health)
+print(mana)
+print(lucky_numbers)
+pprint(user)                    # Prettify output 
+\end{verbatim}
+
+\begin{verbatim}
+Lorem Ipsum
+200
+10.2
+[4, 13]
+{'age': 12,
+ 'favcolors': ['red', 'blue'],
+ 'lucky_number': [4, 13],
+ 'name': 'James',
+ 'password': 'HelloWorld!',
+ 'username': 'jamesp101'}
+\end{verbatim}
+\subsection{Scope}
+\label{sec:orgf05980f}
+The location where we can find a variable and also access it if required.
+
+\subsubsection{Global Scope}
+\label{sec:orgf644d51}
+Global variables are the ones that are defined and declared outside any function. They can be used by any part of the program.
+\begin{verbatim}
+
+my_var = 12
+my_str = 'Hello World'
+
+def say_hello():
+   print (my_str) # my_str variable can be called here
+
+say_hello()
+\end{verbatim}
+
+\begin{verbatim}
+Hello World
+\end{verbatim}
+
+\subsubsection{Local Scope}
+\label{sec:orgb4f2e19}
+Local scope variables are variables that lives only inside a block of code (e.g. function, conditionals, loops).
+
+\begin{verbatim}
+
+def say_hello ():
+    my_str = 'Hello World'
+    print (my_str)
+
+say_hello()
+\end{verbatim}
+
+\begin{verbatim}
+Hello World
+\end{verbatim}
+
+
+Variables cannot go outside the block that belongs.
+
+\begin{verbatim}
+def hello():
+    my_str = 'Hello World'
+    print(my_str)
+
+print(my_str)
+\end{verbatim}
+
+Think of the scope lifetime of a variable.
+Once a block of code is finished executing, the variable inside will be also removed from the memory. 
+
+\begin{verbatim}
+
+import random
+
+def say_hello ():
+    my_str = 12
+
+    while my_str < 100:
+        random = random.randrange(1,6) # Generate random number between 1-5
+        my_str += random
+
+\end{verbatim}
+
+The \texttt{my\_str} variable lives throughout the function. it can be accessed inside the loop. While the \texttt{random} variable cannot go outside the loop due to its scope.
+
+\section{Data Types}
+\label{sec:org18f55ba}
+\subsection{Built-in Data Types}
+\label{sec:org5de7405}
+\begin{center}
+\begin{tabular}{ll}
+Type & Keyword\\[0pt]
+\hline
+Text & \texttt{str}\\[0pt]
+Numbers & \texttt{int}, \texttt{float}, \texttt{complex}\\[0pt]
+Sequence & \texttt{list}, \texttt{tuple}, \texttt{range}\\[0pt]
+Maps & \texttt{dict}\\[0pt]
+Sets & \texttt{set}, \texttt{frozenset}\\[0pt]
+Boolean & \texttt{bool}\\[0pt]
+Binary & \texttt{bytes}, \texttt{bytearray}, \texttt{memoryview}\\[0pt]
+Null & \texttt{NoneType}\\[0pt]
+ & \\[0pt]
+\end{tabular}
+\end{center}
+
+\section{Conditionals}
+\label{sec:orga9fd81b}
+Python supports the usual logical conditions from mathematics
+\begin{itemize}
+\item a == b
+\item a != b
+\item a < b
+\item a > b
+\item a <= b
+\item a >= b
+\end{itemize}
+
+These conditions can be used in several ways, most commonly in \texttt{if statements} and loops
+
+\begin{verbatim}
+
+a = 133
+b = 200
+
+if b > a:
+    print("b is greater than a")
+
+else:
+    print("b is less than a")
+\end{verbatim}
+
+\begin{verbatim}
+b is greater than a
+\end{verbatim}
+
+
+
+
+\begin{verbatim}
+
+a = 133
+b = 200
+
+if b > a:
+    print("b is greater than a")
+
+elif b < a:
+    print("b is less than a")
+
+else:
+    print("They are equal")
+
+\end{verbatim}
+
+\begin{verbatim}
+b is greater than a
+\end{verbatim}
+
+\subsection{Match Statements}
+\label{sec:orgc2010d5}
+NOTE: This only works with Python \textbf{3.10} or newer.
+
+In python we don't have a switch statement. Instead we can use the \texttt{switch} statement.
+
+\begin{verbatim}
+def print_status_code (code):
+    match code:
+        case "200":
+            print("OK")
+        case "404":
+            print("Not Found")
+        case "500":
+            print("Internal Server Error")
+        case _:
+            print("Invalid Status code")
+
+print_status_code('200')
+print_status_code('777')
+\end{verbatim}
+
+\begin{verbatim}
+OK
+Invalid Status code
+\end{verbatim}
+
+\section{Loops}
+\label{sec:org89515bc}
+\subsection{For Loops}
+\label{sec:org8cd8017}
+
+For loop is used in iterating a list or tuples
+\begin{verbatim}
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    print (x)
+
+\end{verbatim}
+
+\begin{verbatim}
+apple
+banana
+cherry
+\end{verbatim}
+
+
+Use \texttt{enumerate()} to get the number iteration. 
+
+\begin{verbatim}
+fruits = ["apple", "banana", "cherry"]
+for itr, x in enumerate(fruits):
+    print (itr, x)
+
+\end{verbatim}
+
+\begin{verbatim}
+0 apple
+1 banana
+2 cherry
+\end{verbatim}
+
+
+A for loop with range.
+
+\begin{verbatim}
+for i in range(5):
+    print(i)
+\end{verbatim}
+
+\begin{verbatim}
+0
+1
+2
+3
+4
+\end{verbatim}
+\subsection{While Loop}
+\label{sec:orgad26206}
+With the \texttt{while} loop we can execute a set of statements as long as a
+condition is true.
+\begin{verbatim}
+i = 1
+while i < 6:
+    print(i)
+    i+=1
+\end{verbatim}
+
+\begin{verbatim}
+1
+2
+3
+4
+5
+\end{verbatim}
+
+
+While loop with else statement
+
+\begin{verbatim}
+i = 1
+while i < 6:
+    print(i)
+    i+=1
+
+else:
+    print('i is no longer less than 6')
+\end{verbatim}
+
+\begin{verbatim}
+1
+2
+3
+4
+5
+i is no longer less than 6
+\end{verbatim}
+
+\section{Functions}
+\label{sec:org96944b0}
+A function is a block of code that runs when it is called.
+\begin{verbatim}
+def my_function ():
+  print("Hello from a function")
+\end{verbatim}
+
+\subsection{Calling a function}
+\label{sec:orgaf6eac2}
+Before a function runs, it must be called.
+
+\begin{verbatim}
+def my_function ():
+  print("Hello from a function")
+
+my_function()
+\end{verbatim}
+
+\begin{verbatim}
+Hello from a function
+\end{verbatim}
+
+
+Functions are useful for programmers to divide their programs into separate modules.
+
+
+\subsection{Return}
+\label{sec:org840750f}
+A return statement is used to \textbf{end} the execution of the function call and return a value.
+
+\begin{verbatim}
+def my_func():
+  a = 12
+  b = 3
+  return
+a = b * a                     # This code will not be executed.
+
+\end{verbatim}
+
+Note: Return statement cannot be used outside the function.
+
+
+
+The value next to the return statement will be returned.
+
+\begin{verbatim}
+
+import random                   # Import random library
+
+def roll_dice():
+    return random.randrange(1,7)  # Generate a random number between 0-6 and returns it.
+
+dice_num = roll_dice()         # The returned value will be passed to the 'dice_num'varaible
+# print(roll_dice())           # We can also print directly the function.
+
+if dice_num == 1:
+    print('You won!')
+else:
+    print('You lose!')
+\end{verbatim}
+
+\begin{verbatim}
+You won!
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+\subsection{Parameters and Arguments}
+\label{sec:org0915656}
+\subsubsection{Parameters}
+\label{sec:orgc5a6c83}
+Data can be passed into functions as arguments.
+Arguments are specified after the function name, inside the parentheses.
+You can add as many arguments as you want, just separate them with a comma.
+\begin{verbatim}
+def my_function (fname):        # Any data that will be passed will take the 'fname' variable
+  print (f'My name is {fname}') 
+
+my_function('Slim shady')       # The value of 'fname' variable is 'Slim Shady'
+my_function('Monad')
+my_function('Giovanni Giorgio')
+my_function('Antonio Montaya')
+\end{verbatim}
+
+\begin{verbatim}
+My name is Slim shady
+My name is Monad
+My name is Giovanni Giorgio
+My name is Antonio Montaya
+\end{verbatim}
+
+
+
+\subsubsection{Arguments}
+\label{sec:orge9882a0}
+The argument data will be the parameter variable.
+
+
+
+\begin{verbatim}
+def display_name (fname, lname, age,):
+    print (f'My name is {fname} {lname}. I am {age} years old.')
+
+display_name('Yoshikage', 'Kira', 33)
+\end{verbatim}
+
+\begin{verbatim}
+My name is Yoshikage Kira. I am 33 years old.
+\end{verbatim}
+
+
+Arguments are the data that goes to the function call.
+
+\begin{verbatim}
+
+def square_nums (num):          # The 'num' is the parameter.
+    return num ** 2
+
+my_num = 12
+result = square_nums(my_num)    # The 'my_num' is the argument.
+print(result)
+
+\end{verbatim}
+
+\begin{verbatim}
+144
+\end{verbatim}
+
+
+
+
+The parameters \textbf{must be filled} with data or variables, else it returns an error.
+
+
+\begin{verbatim}
+My name is Yoshikage Kira. I am 33 years old.
+\end{verbatim}
+\subsubsection{Optional Parameters / Default Value Parameters}
+\label{sec:org1132fbe}
+Not all parameters are required. We can make some of the parameters \textbf{optional}.
+
+For example the \texttt{print()} function.
+\texttt{print()} function provides us with multiple optional parameters. (see the docs \href{https://docs.python.org/3/library/functions.html\#print}{here} ).
+
+The ending character of each \texttt{print()} function is \texttt{\textbackslash{}n}.
+We can change its value of it with an optional argument. 
+\begin{verbatim}
+print('Hello World')      # No optional arguments
+print('Hello', end='')    # With optional Arguments
+print(' World', end='!')  # With optional Arguments
+\end{verbatim}
+
+\begin{verbatim}
+Hello World
+Hello World!
+\end{verbatim}
+
+
+In creating an optional parameter, it must have a default value if no arguments are provided.
+
+\begin{verbatim}
+
+def square_num(num=0):
+    return num ** 2
+
+print(square_num(5))
+print(square_num())
+\end{verbatim}
+
+\begin{verbatim}
+25
+0
+\end{verbatim}
+
+
+
+\subsection{Type Hints}
+\label{sec:org5ef7b40}
+In creating a function, we can indicate the \textbf{expected} data types of arguments or return values.
+
+This can help to improve code readability, prevent errors, and make code easier to maintain
+
+\begin{verbatim}
+def add_numbers(a: int, b: float) -> float:
+
+    return a + b
+
+
+add_numbers("1", 2)  # We would get an error in the output
+\end{verbatim}
+
+
+
+
+
+
+
+\section{Exception Handling}
+\label{sec:orge849171}
+Adding extensive error handling is crucial when developing maintainable code.
+
+If you have a block of code that might fail, you can
+manage any exceptions by placing an \texttt{try:} and \texttt{except:} block.
+\begin{verbatim}
+import random                   # Import Random library
+
+try:
+    num = random.randrange(0, 11)    # Generate random number between 0,10
+    result = 2 / num                 # If we get 0 in the 'num' variable, we wil get an error 
+except:
+    print('Cannot divide zero') # This will run if 'num' variable is zero.
+\end{verbatim}
+
+We can specify what error we want to handle
+
+
+\begin{verbatim}
+try:
+    num = input('Give me num: ' )               
+    num = float (num)
+    result = 2 / num
+except ValueError:              # If we cannot convert our input, this will run.
+    print('Your input is wrong')
+except ZeroDivisionError:
+    print('Cannot divide zero') # If the input is zero
+except Exception:
+    print('An error occurred') # If there are other errors that occurs.
+
+\end{verbatim}
+
+\begin{verbatim}
+Give me num: An error occurred
+\end{verbatim}
+
+
+We can have many exceptions in our try-except statement (see the built-in exceptions \href{https://docs.python.org/3/library/exceptions.html}{here}).
+
+
+
+
+
+\section{Class}
+\label{sec:orgd7e4455}
+
+Python is an object-oriented programming language.
+Almost everything in python is an object, with its properties and methods.
+
+A class is like an object constructor or a \uline{blueprint} for creating objects.
+
+
+Create a class with a property named x.
+\begin{verbatim}
+class MyClass:
+  x=5
+\end{verbatim}
+
+Create an object named p1, and print the value of x:
+\begin{verbatim}
+class MyClass:
+  x=5
+
+p1 = MyClass()
+print(p1.x)
+\end{verbatim}
+
+\begin{verbatim}
+5
+\end{verbatim}
+
+\subsection{\_\textsubscript{init}\_\textsubscript{()} function}
+\label{sec:orgf43601b}
+
+All classes have a function called \texttt{\_\_init\_\_()}, which is always executed when the class is being initiated.
+Use the \texttt{\_\_init\_\_()} function to assign values to object properties or other operations that are necessary to do when the object is being created.
+
+
+\begin{verbatim}
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person('John', 37)
+
+print(p1.name)
+print(p1.age)
+\end{verbatim}
+
+\begin{verbatim}
+John
+37
+\end{verbatim}
+
+
+
+NOTE: The \textasciitilde{}\_\textsubscript{init}\_\textsubscript{()} \textasciitilde{}function is called automatically every time the class is being used to create a new object.
+
+\subsection{Object Methods}
+\label{sec:org9690c46}
+Objects can also contain methods. Methods in objects are functions that belong to the object.
+
+
+\begin{verbatim}
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def myfunc(self):
+    print("Hello my name is " + self.name)
+
+p1 = Person("John", 36)
+p1.myfunc() 
+\end{verbatim}
+
+\begin{verbatim}
+Hello my name is John
+\end{verbatim}
+
+\subsection{Self Parameter}
+\label{sec:org6c8a43b}
+The \texttt{self} parameter is a reference to the current instance of the class and is used to access variables that belong to the class.
+It does not have to be named self, you can call it whatever you like, but it has to be the first parameter of any function in the class
+
+\begin{verbatim}
+class Person:
+  def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+  def myfunc(abc):
+    print("Hello my name is " + abc.name)
+
+p1 = Person("John", 36)
+p1.myfunc() 
+\end{verbatim}
+
+\begin{verbatim}
+Hello my name is John
+\end{verbatim}
+
+
+
+\subsection{Pass Statement}
+\label{sec:orgdd5196d}
+\texttt{class} definitions cannot be empty, but if you for some reason have a \texttt{class} definition with no content, put in the \texttt{pass} statement to avoid getting an error.
+
+\begin{verbatim}
+class Person:
+  pass
+\end{verbatim}
+
+
+
+
+
+
+
+
+\section{Keywords}
+\label{sec:org002c962}
+Keywords a reserved words in python.
+
+We cannot use a keyword as a name for a variable, function or any other identifier
+
+
+We can show the reserved keywords in python by:
+\begin{verbatim}
+import keyword
+print(keyword.kwlist)
+\end{verbatim}
+
+\begin{verbatim}
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+\end{verbatim}
+\end{document}
